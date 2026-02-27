@@ -43,4 +43,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.innerText = 'Send Message';
             });
     });
+    window.addEventListener('scroll', () => {
+        const scrollPercent = window.scrollY / (document.body.offsetHeight - window.innerHeight);
+        // Subtle shift in navbar opacity based on scroll
+        const nav = document.querySelector('.glass-nav');
+        if (window.scrollY > 50) {
+            nav.style.background = "rgba(255, 255, 255, 0.98)";
+            nav.style.boxShadow = "0 10px 30px rgba(0,0,0,0.1)";
+        } else {
+            nav.style.background = "rgba(210, 234, 251, 0.95)";
+            nav.style.boxShadow = "none";
+        }
+    });
 });

@@ -1,33 +1,60 @@
-:root {
+/* :root {
     --primary: #0078d4;
     --dark: #2c3e80;
     --light-bg: #fcfcfd;
+} */
+ :root {
+    --primary: #0078d4;
+    --dark: #0a192f;
+    --charcoal: #2C3E50;
+    --glass-blue: rgba(210, 234, 251, 0.95);
 }
 /* Smooth scrolling for the whole page */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; /* Matches your navbar height to prevent overlap */
 }
-
-/* Make sections occupy the full viewport */
-section {
+/* 1. Unified Gradient Flow */
+body {
+    /* This creates a continuous flow from light sky to deep charcoal */
+    background: linear-gradient(180deg, 
+        #f0f9ff 0%,     /* Hero Start */
+        #e0f2fe 20%,    /* Hero End */
+        #ffffff 35%,    /* Skills (Clean White) */
+        #ffffff 55%,    /* Skills End */
+        #2C3E50 75%,    /* Expertise (Charcoal) */
+        #0a192f 100%    /* Footer (Dark Navy) */
+    );
+    font-family: 'Inter', sans-serif;
+    color: var(--dark);
+    margin: 0;
+}
+/* Remove fixed background colors from sections to let the body gradient show through */
+section, header {
     min-height: 100vh;
     display: flex;
+    align-items: center;
+    background: transparent !important; 
+}
+/* Make sections occupy the full viewport */
+section {
     flex-direction: column;
     justify-content: center; /* Centers content vertically */
     padding: 100px 0; /* Extra breathing room */
 }
-
+/* 3. Section Transitions */
+#skills { border-top: 1px solid rgba(0, 120, 212, 0.05); }
+#expertise { color: white; }
 /* Specific background for the expertise section to create visual separation */
-.bg-charcoal {
+/* .bg-charcoal {
     background-color: #2C3E50 !important;
-}
+} */
 
-body {
+/* body {
     background-color: var(--light-bg);
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     color: var(--dark);
-}
+} */
 
 .glass-nav {
     background: rgba(210, 234, 251, 0.95);
@@ -54,16 +81,41 @@ body {
     line-height: 0.85;
 }
 
-.main-profile-img {
+/* .main-profile-img {
     border-radius: 20px;
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 50%;
+} */
+/* 2. Enhanced Profile Photo & Animation */
+.main-profile-img {
+    width: 100%;
+    max-width: 550px; /* Increased size */
+    border-radius: 30px;
+    box-shadow: 0 40px 80px rgba(0, 120, 212, 0.2);
+    border: 8px solid rgba(255, 255, 255, 0.9);
+    object-fit: cover;
+    /* Floating Animation */
+    animation: floatImage 6s ease-in-out infinite;
 }
 
+@keyframes floatImage {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.image-container {
+    position: relative;
+    padding: 20px;
+}
 .hero-section {
+    padding: 100px;
     background: radial-gradient(circle at top right, #e0f2fe, transparent 60%);
     margin-bottom: 10px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .image-wrapper img {
@@ -155,4 +207,9 @@ body {
     width: 60px;
     height: 4px;
     background: var(--primary);
+}
+.ts{
+    border: solid var(--dark);
+    border-radius: 10px;
+    box-shadow: 0 40px 80px rgba(0, 120, 212, 0.2);
 }
