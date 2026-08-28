@@ -1,144 +1,256 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mostafa Safwat | IT Strategy & Development</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostafa Safwat Ibrahim | Enterprise Architect & CIO</title>
+  
+  <!-- Typography Pairing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav py-1">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <img src="logo.png" alt="MS Branding Logo" height="80" class="me-3 animate__animated animate__fadeIn">
-                <div class="brand-text">
-                    <span class="fw-black fs-2 d-block leading-none">MOSTAFA</span>
-                    <span class="fw-light fs-4 text-primary tracking-widest">SAFWAT</span>
-                </div>
-            </a>
-            <div class="collapse navbar-collapse justify-content-end">
-                <ul class="navbar-nav gap-4 fs-5">
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold" href="#expertise">Expertise</a></li>
-                    <li class="nav-item"><a class="btn btn-primary btn-lg text-white rounded-2 px-15"
-                            href="#contact">Contact Me</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
-<header class="hero-section">
-        <div class="container">
-            <div class="row align-items-center min-vh-100 g-5">
-                <div class="col-lg-6">
-                    <h1 class="display-1 fw-black animate__animated animate__fadeInLeft">Head of IT Operations</h1>
-                    <p class="fs-2 text-secondary mt-4 animate__animated animate__fadeInUp" style="line-height: 1.4;">
-                        25+ years of strategic leadership in information technology and digital transformation.
-                    </p>
-                    <div class="mt-5 animate__animated animate__fadeInUp animate__delay-1s">
-                         <a href="#contact" class="btn btn-primary btn-xl px-5 py-3 fs-4 rounded-pill shadow-lg">Work With Me</a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center">
-                    <div class="image-container animate__animated animate__zoomIn">
-                        <img src="photo.jpeg" alt="Mostafa Safwat" class="img-fluid main-profile-img">
-                        <div class="photo-glow"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="container header-content">
+      <a href="#hero" class="brand" aria-label="Home">
+        <img src="logo-trans.png" alt="Mostafa Safwat Ibrahim Logo" class="brand-logo">
+        <span>M. Safwat</span>
+      </a>
 
-    <section id="skills" class="py-10 bg-white">
-        <div class="container">
-            <h2 class="display-5 fw-bold text-center mb-10 ts">Technical Mastery</h2>
-            <h4 class="display-10 fw-bold text-center">Coding Skills</h4>
-            <div class="row g-4 justify-content-center">
-                <div class="col-md-3 skill-item">.NET Core / C#</div>
-                <div class="col-md-3 skill-item">Python / Django</div>
-                <div class="col-md-3 skill-item">SQL Server / MySQL</div>
-                <div class="col-md-3 skill-item">JS / HTML5 / CSS3</div>
+      <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#skills" class="nav-link">Architecture</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <svg class="sun-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </button>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Mobile Menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Executive Hero Section -->
+    <section id="hero" class="section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-pulse"></span>
+            Enterprise Software Architect & CIO
+          </div>
+          <h1 class="hero-headline">
+            Engineering Resilient <br>
+            <span class="gradient-text">Enterprise Solutions</span>
+          </h1>
+          <p class="hero-subline">
+            Specializing in high-throughput backend systems, cloud transformation, and scalable software ecosystems across modern enterprise stacks.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">Explore Portfolio</a>
+            <a href="#contact" class="btn btn-secondary">Direct Contact</a>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <div class="metric-value gradient-text">25+</div>
+              <div class="metric-label">Years Experience</div>
             </div>
+            <div class="metric-item">
+              <div class="metric-value gradient-text">100+</div>
+              <div class="metric-label">Enterprise Deployments</div>
+            </div>
+            <div class="metric-item">
+              <div class="metric-value gradient-text">99.9%</div>
+              <div class="metric-label">Uptime Architecture</div>
+            </div>
+          </div>
         </div>
+
+        <div class="hero-media">
+          <div class="avatar-wrapper">
+            <img src="profile.png" alt="Mostafa Safwat Ibrahim" class="avatar-img" loading="eager">
+          </div>
+        </div>
+      </div>
     </section>
-    <section id="expertise" class="py-10 bg-charcoal text-white">
-        <div class="container">
-            <h2 class="display-5 fw-bold text-center mb-10">Strategic Expertise</h2>
-            <div class="row g-4">
-                <div class="col-lg-4">
-                    <div class="expertise-card p-4 rounded-4 h-100">
-                        <div class="expertise-icon mb-3">📊</div>
-                        <h3 class="h4 fw-bold">IT Strategy & Operations</h3>
-                        <p class="opacity-75">Over 25 years of experience managing large-scale IT operations and infrastructure for major financial and governmental organizations.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="expertise-card p-4 rounded-4 h-100">
-                        <div class="expertise-icon mb-3">🚀</div>
-                        <h3 class="h4 fw-bold">Digital Transformation</h3>
-                        <p class="opacity-75">Leading organizational change through modern technology adoption, streamlining workflows, and enhancing digital service delivery.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="expertise-card p-4 rounded-4 h-100">
-                        <div class="expertise-icon mb-3">💻</div>
-                        <h3 class="h4 fw-bold">Full-Stack Development</h3>
-                        <p class="opacity-75">Architecting robust solutions using .NET Core and Python/Django, backed by deep knowledge of SQL and modern JS frameworks.</p>
-                    </div>
-                </div>
-            </div>
+
+    <!-- Filterable Projects Section -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Case Studies</span>
+          <h2>Featured Architecture</h2>
+          <p>Production systems engineered for scale, reliability, and security.</p>
         </div>
+
+        <div class="filter-group" role="tablist" aria-label="Portfolio Category Filter">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Systems</button>
+          <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend & APIs</button>
+          <button class="filter-btn" data-filter="architecture" role="tab" aria-selected="false">Enterprise Architecture</button>
+          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack</button>
+        </div>
+
+        <div class="projects-grid" id="projects-grid">
+          <article class="project-card glass-panel" data-category="architecture">
+            <div class="project-body">
+              <span class="project-category">Enterprise Architecture</span>
+              <h3 class="project-title">Scalable Core Banking Gateway</h3>
+              <p class="project-description">Engineered a distributed microservices gateway handling secure financial transactions with zero downtime.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">.NET Core</span>
+                <span class="tech-tag">Microservices</span>
+                <span class="tech-tag">SQL Server</span>
+                <span class="tech-tag">Docker</span>
+              </div>
+              <a href="#contact" class="project-link">Review Blueprint &rarr;</a>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel" data-category="fullstack">
+            <div class="project-body">
+              <span class="project-category">Full-Stack</span>
+              <h3 class="project-title">SafyaClinic Management System</h3>
+              <p class="project-description">Refactored healthcare ERP utilizing repository abstractions, EF Core migrations, and strict status validations.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">C#</span>
+                <span class="tech-tag">ASP.NET MVC</span>
+                <span class="tech-tag">EF Core</span>
+                <span class="tech-tag">JavaScript</span>
+              </div>
+              <a href="#contact" class="project-link">View Case Study &rarr;</a>
+            </div>
+          </article>
+
+          <article class="project-card glass-panel" data-category="backend">
+            <div class="project-body">
+              <span class="project-category">Backend & APIs</span>
+              <h3 class="project-title">High-Velocity Analytics Engine</h3>
+              <p class="project-description">Asynchronous data processing pipeline streaming real-time transactional metrics to executive dashboards.</p>
+              <div class="tech-tags">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Django</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Redis</span>
+              </div>
+              <a href="#contact" class="project-link">Analyze System &rarr;</a>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
-<footer id="contact" class="py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6">
-                    <h2 class="display-6 fw-bold mb-4">Send a Message</h2>
-                    <form id="contact-form" class="bg-white p-4 rounded-4 text-dark">
-                        <div class="mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100 btn-lg">Send Message</button>
-                    </form>
-                </div>
 
-                <div class="col-lg-6 ps-lg-5">
-                    <h2 class="display-6 fw-bold mb-4">Connect</h2>
-                    <p class="fs-5 mb-4">Looking for strategic IT leadership or full-stack development expertise?</p>
-                    
-                    <div class="mb-4">
-                        <p class="mb-1"><strong class="text-primary">Email:</strong> <a href="mailto:mostafa.safwat@gmail.com" class="text-white text-decoration-none">mostafa.safwat@gmail.com</a></p>
-                        <p><strong class="text-primary">WhatsApp:</strong> <a href="https://wa.me/201000000000" class="text-white text-decoration-none">+20 100 000 0000</a></p>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <a href="https://linkedin.com/in/mostafasafwat" class="btn btn-outline-light">LinkedIn</a>
-                        <a href="https://github.com/MostafaSIbrahim" class="btn btn-outline-light">GitHub</a>
-                        <a href="#" class="btn btn-outline-light">Upwork</a>
-                        <a href="#" class="btn btn-outline-light">Freelancer</a>
-                        <a href="#" class="btn btn-outline-light">Freelanceyard</a>
-                    </div>
-                </div>
-            </div>
-            <hr class="my-5 opacity-25">
-            <div class="text-center opacity-75">
-                <p>&copy; 2026 Mostafa Safwat. All rights reserved.</p>
-            </div>
+    <!-- Skills Matrix Section -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Competencies</span>
+          <h2>Technical Architecture</h2>
+          <p>Robust methodologies honed across two decades of high-level IT engineering.</p>
         </div>
-    </footer>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="script.js"></script>
+
+        <div class="skills-grid">
+          <div class="skill-card glass-panel">
+            <div class="skill-icon">⚙️</div>
+            <h3>Backend Engineering</h3>
+            <ul class="skill-list">
+              <li class="skill-item">.NET Core & C# Ecosystem</li>
+              <li class="skill-item">Python / Django Frameworks</li>
+              <li class="skill-item">RESTful & Event-Driven APIs</li>
+              <li class="skill-item">High-Concurrency Processing</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass-panel">
+            <div class="skill-icon">🏛️</div>
+            <h3>Architecture & Governance</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Executive IT Strategy & Direction</li>
+              <li class="skill-item">Domain-Driven Design (DDD)</li>
+              <li class="skill-item">Cloud Migration & Scalability</li>
+              <li class="skill-item">Database Architecture (SQL Server)</li>
+            </ul>
+          </div>
+
+          <div class="skill-card glass-panel">
+            <div class="skill-icon">💻</div>
+            <h3>Modern Frontend</h3>
+            <ul class="skill-list">
+              <li class="skill-item">Semantic HTML5 & Responsive CSS</li>
+              <li class="skill-item">Vanilla ES6+ UI Engineering</li>
+              <li class="skill-item">Performance & Core Web Vitals</li>
+              <li class="skill-item">WCAG AA Compliant Interfaces</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="section">
+      <div class="container contact-container">
+        <div class="section-header">
+          <span class="section-tag">Direct Inquiry</span>
+          <h2>Initiate Collaboration</h2>
+          <p>Reach out for executive consulting, software architecture, or speaking engagements.</p>
+        </div>
+
+        <div class="glass-panel">
+          <form id="contact-form" class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="user_name" class="form-label">Full Name</label>
+                <input type="text" id="user_name" name="user_name" class="form-control" placeholder="e.g. John Doe" required>
+                <span class="error-feedback" id="name-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="user_email" class="form-label">Email Address</label>
+                <input type="email" id="user_email" name="user_email" class="form-control" placeholder="e.g. john@company.com" required>
+                <span class="error-feedback" id="email-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject" class="form-label">Subject</label>
+              <input type="text" id="subject" name="subject" class="form-control" placeholder="Executive Architecture Consultation" required>
+              <span class="error-feedback" id="subject-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea id="message" name="message" class="form-control" placeholder="Outline your technical requirements or strategic objectives..." required></textarea>
+              <span class="error-feedback" id="message-error"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              <span>Transmit Inquiry</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+            </button>
+
+            <div class="form-status" id="form-status" role="alert"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; 2026 Mostafa Safwat Ibrahim. Architected with high-performance Vanilla Standards.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
