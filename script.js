@@ -119,6 +119,65 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   setMenuOpen(false);
+    // Highlight the current section in navigation.
+  const header = document.querySelector('.header');
+  const navigationItems = Array.from(
+    navMenu.querySelectorAll('.nav-link')
+  ).map(link => ({
+    link,
+    section: document.getElementById(
+      link.getAttribute('href').slice(1)
+    )
+  })).filter(item => item.section);
+
+  let navigationFrame = null;
+
+  const updateActiveSection = () => {
+    navigationFrame = null;
+
+    const readingLine = header.getBoundingClientRect().bottom + 32;
+    let activeItem = null;
+
+    navigationItems.forEach(item => {
+      if (item.section.getBoundingClientRect().top <= readingLine) {
+        activeItem = item;
+      }
+    });
+
+    // The final section may be too short to reach the reading line.
+    const atPageEnd =
+      window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 2;
+
+    if (atPageEnd && window.scrollY > 0) {
+      activeItem = navigationItems[navigationItems.length - 1];
+    }
+
+    navigationItems.forEach(item => {
+      if (item === activeItem) {
+        item.link.setAttribute('aria-current', 'location');
+      } else {
+        item.link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  const scheduleNavigationUpdate = () => {
+    if (navigationFrame !== null) return;
+
+    navigationFrame = window.requestAnimationFrame(
+      updateActiveSection
+    );
+  };
+
+  window.addEventListener('scroll', scheduleNavigationUpdate, {
+    passive: true
+  });
+  window.addEventListener('resize', scheduleNavigationUpdate);
+  window.addEventListener('load', scheduleNavigationUpdate);
+  window.addEventListener('hashchange', scheduleNavigationUpdate);
+
+  updateActiveSection();
   // 3. Project screenshot galleries
   document.querySelectorAll('[data-gallery]').forEach(gallery => {
     const slides = Array.from(
