@@ -219,6 +219,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
 }
 
 .nav-link {
@@ -962,6 +963,7 @@ section[id] {
   border: 0;
   border-radius: 0;
   background: transparent;
+  box-shadow: none;
   }
 
   .nav-list li {
