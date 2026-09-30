@@ -1,129 +1,186 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Dynamic Theme Toggling with Local Storage Persistence
+  // 1. Theme preference with optional persistence
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;
-  
-  const savedTheme = localStorage.getItem('theme') || 'dark';
-  root.setAttribute('data-theme', savedTheme);
+  const systemTheme = window.matchMedia(
+    '(prefers-color-scheme: dark)'
+  );
+
+  let preferredTheme = null;
+
+  try {
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme === 'dark' || storedTheme === 'light') {
+      preferredTheme = storedTheme;
+    }
+  } catch {
+    // The page remains usable when browser storage is unavailable.
+  }
+
+  const applyTheme = theme => {
+    root.dataset.theme = theme;
+
+    themeToggle.setAttribute(
+      'aria-label',
+      theme === 'dark'
+        ? 'Switch to light theme'
+        : 'Switch to dark theme'
+    );
+  };
+
+  applyTheme(
+    preferredTheme || (systemTheme.matches ? 'dark' : 'light')
+  );
 
   themeToggle.addEventListener('click', () => {
-    const currentTheme = root.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-  });
+    preferredTheme =
+      root.dataset.theme === 'dark' ? 'light' : 'dark';
 
-  // 2. Mobile Drawer Menu Navigation
-  const menuToggle = document.getElementById('menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  menuToggle.addEventListener('click', () => {
-    const isOpen = navMenu.classList.toggle('is-open');
-    menuToggle.setAttribute('aria-expanded', isOpen);
-  });
-
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('is-open');
-      menuToggle.setAttribute('aria-expanded', false);
-    });
-  });
-
-  // 3. Project Grid Filtering Component
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const projectCards = document.querySelectorAll('.project-card');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => {
-        b.classList.remove('active');
-        b.setAttribute('aria-selected', false);
-      });
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected', true);
-
-      const filterValue = btn.getAttribute('data-filter');
-
-      projectCards.forEach(card => {
-        const category = card.getAttribute('data-category');
-        if (filterValue === 'all' || category === filterValue) {
-          card.classList.remove('is-hidden');
-        } else {
-          card.classList.add('is-hidden');
-        }
-      });
-    });
-  });
-
-  // 4. Form Validation Engine & EmailJS Dispatch Stub
-  const contactForm = document.getElementById('contact-form');
-  const submitBtn = document.getElementById('submit-btn');
-  const formStatus = document.getElementById('form-status');
-
-  const validators = {
-    user_name: (val) => val.trim().length >= 2 ? '' : 'Name must be at least 2 characters.',
-    user_email: (val) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ? '' : 'Please enter a valid email address.',
-    subject: (val) => val.trim().length >= 4 ? '' : 'Subject must be at least 4 characters.',
-    message: (val) => val.trim().length >= 10 ? '' : 'Message must be at least 10 characters.'
-  };
-
-  const validateField = (input) => {
-    const errorSpan = document.getElementById(`${input.id.replace('user_', '')}-error`) || 
-                      document.getElementById(`${input.id}-error`);
-    const errorMsg = validators[input.name] ? validators[input.name](input.value) : '';
-
-    if (errorMsg) {
-      input.classList.add('is-invalid');
-      input.classList.remove('is-valid');
-      if (errorSpan) errorSpan.textContent = errorMsg;
-      return false;
-    } else {
-      input.classList.remove('is-invalid');
-      input.classList.add('is-valid');
-      if (errorSpan) errorSpan.textContent = '';
-      return true;
-    }
-  };
-
-  ['input', 'blur'].forEach(evt => {
-    contactForm.addEventListener(evt, (e) => {
-      if (e.target.matches('.form-control')) {
-        validateField(e.target);
-      }
-    }, true);
-  });
-
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    let isValid = true;
-    const inputs = contactForm.querySelectorAll('.form-control');
-    inputs.forEach(input => {
-      if (!validateField(input)) isValid = false;
-    });
-
-    if (!isValid) return;
-
-    // UI Loading State
-    submitBtn.disabled = true;
-    submitBtn.querySelector('span').textContent = 'Transmitting...';
-    formStatus.className = 'form-status';
-    formStatus.textContent = '';
+    applyTheme(preferredTheme);
 
     try {
-      // Integration endpoint / EmailJS trigger
-      await new Promise((resolve) => setTimeout(resolve, 1200));
-
-      formStatus.className = 'form-status success';
-      formStatus.textContent = 'Inquiry successfully transmitted. Our executive team will connect shortly.';
-      contactForm.reset();
-      inputs.forEach(i => i.classList.remove('is-valid'));
-    } catch (error) {
-      formStatus.className = 'form-status error';
-      formStatus.textContent = 'Failed to transmit message. Please verify network or connect directly via LinkedIn.';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.querySelector('span').textContent = 'Transmit Inquiry';
+      localStorage.setItem('theme', preferredTheme);
+    } catch {
+      // Theme switching still works for the current visit.
     }
+  });
+
+  systemTheme.addEventListener('change', event => {
+    if (preferredTheme === null) {
+      applyTheme(event.matches ? 'dark' : 'light');
+    }
+  });
+
+   // 2. Mobile navigation
+  const menuToggle = document.getElementById('menu-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  const mobileLayout = window.matchMedia('(max-width: 868px)');
+
+  const setMenuOpen = (open, restoreFocus = false) => {
+    const isOpen = mobileLayout.matches && open;
+
+    if (restoreFocus) {
+      menuToggle.focus();
+    }
+
+    navMenu.classList.toggle('is-open', isOpen);
+    navMenu.inert = mobileLayout.matches && !isOpen;
+
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close navigation menu' : 'Open navigation menu'
+    );
+  };
+
+  menuToggle.addEventListener('click', () => {
+    const open = !navMenu.classList.contains('is-open');
+    setMenuOpen(open);
+
+    if (open) {
+      navMenu.querySelector('a')?.focus();
+    }
+  });
+
+  navMenu.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mobileLayout.matches) {
+        setMenuOpen(false, true);
+      }
+    });
+  });
+
+  document.addEventListener('keydown', event => {
+    if (
+      event.key === 'Escape' &&
+      navMenu.classList.contains('is-open')
+    ) {
+      setMenuOpen(false, true);
+    }
+  });
+
+  document.addEventListener('focusin', event => {
+    if (
+      navMenu.classList.contains('is-open') &&
+      !navMenu.contains(event.target) &&
+      !menuToggle.contains(event.target)
+    ) {
+      setMenuOpen(false);
+    }
+  });
+
+  mobileLayout.addEventListener('change', () => {
+    const focusWillBeHidden =
+      mobileLayout.matches &&
+      navMenu.contains(document.activeElement);
+
+    setMenuOpen(false, focusWillBeHidden);
+  });
+
+  setMenuOpen(false);
+  // 3. Project screenshot galleries
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const slides = Array.from(
+      gallery.querySelectorAll('.gallery-slide')
+    );
+    const controls = gallery.querySelector('.gallery-controls');
+    const previous = gallery.querySelector('[data-previous]');
+    const next = gallery.querySelector('[data-next]');
+    const status = gallery.querySelector('.gallery-status');
+
+    if (
+      slides.length < 2 ||
+      !controls ||
+      !previous ||
+      !next ||
+      !status
+    ) {
+      return;
+    }
+
+    let currentIndex = 0;
+
+    const showSlide = index => {
+      currentIndex = (index + slides.length) % slides.length;
+
+      slides.forEach((slide, slideIndex) => {
+        slide.hidden = slideIndex !== currentIndex;
+      });
+
+      status.textContent =
+        `Screen ${currentIndex + 1} of ${slides.length}`;
+    };
+
+    previous.addEventListener('click', () => {
+      showSlide(currentIndex - 1);
+    });
+
+    next.addEventListener('click', () => {
+      showSlide(currentIndex + 1);
+    });
+
+    controls.addEventListener('keydown', event => {
+      if (
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey
+      ) {
+        return;
+      }
+
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showSlide(currentIndex - 1);
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showSlide(currentIndex + 1);
+      }
+    });
+
+    showSlide(0);
+    gallery.classList.add('is-enhanced');
+    controls.hidden = false;
   });
 });

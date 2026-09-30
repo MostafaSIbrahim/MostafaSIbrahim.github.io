@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mostafa Safwat Ibrahim | Enterprise Architect & CIO</title>
-  
-  <!-- Typography Pairing -->
+  <meta
+    name="description"
+    content="Explore Mostafa Safwat Ibrahim’s software development and application architecture portfolio, including the SafyaClinic management application.">  <!-- Typography Pairing -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<a class="skip-link" href="#main-content">Skip to main content</a>
   <!-- Header Navigation -->
   <header class="header">
     <div class="container header-content">
@@ -42,112 +43,259 @@
     </div>
   </header>
 
-  <main>
-    <!-- Executive Hero Section -->
-    <section id="hero" class="section">
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Section -->
+    <section id="hero" class="section" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="hero-badge">
-            <span class="hero-badge-pulse"></span>
-            Enterprise Software Architect & CIO
-          </div>
-          <h1 class="hero-headline">
-            Engineering Resilient <br>
-            <span class="gradient-text">Enterprise Solutions</span>
-          </h1>
-          <p class="hero-subline">
-            Specializing in high-throughput backend systems, cloud transformation, and scalable software ecosystems across modern enterprise stacks.
+          <p class="hero-eyebrow">
+            Software engineering · Architecture · IT leadership
           </p>
+
+          <h1 id="hero-title" class="hero-headline">
+            Mostafa Safwat <span>Ibrahim.</span>
+          </h1>
+
+          <p class="hero-positioning">
+            Thoughtful architecture. Practical software.
+          </p>
+
+          <p class="hero-subline">
+            I turn business requirements into maintainable applications,
+            connecting technical strategy with hands-on development.
+            Explore my projects and the decisions behind them.
+          </p>
+
           <div class="hero-cta-group">
-            <a href="#projects" class="btn btn-primary">Explore Portfolio</a>
-            <a href="#contact" class="btn btn-secondary">Direct Contact</a>
+            <a href="#projects" class="btn btn-primary">Explore my work</a>
+            <a href="#contact" class="btn btn-secondary">Get in touch</a>
           </div>
-          <div class="metrics-grid">
-            <div class="metric-item">
-              <div class="metric-value gradient-text">25+</div>
-              <div class="metric-label">Years Experience</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-value gradient-text">100+</div>
-              <div class="metric-label">Enterprise Deployments</div>
-            </div>
-            <div class="metric-item">
-              <div class="metric-value gradient-text">99.9%</div>
-              <div class="metric-label">Uptime Architecture</div>
-            </div>
-          </div>
+
+          <ul class="hero-expertise" aria-label="Areas of expertise">
+            <li>Software development</li>
+            <li>Enterprise architecture</li>
+            <li>Technical leadership</li>
+          </ul>
         </div>
 
         <div class="hero-media">
-          <div class="avatar-wrapper">
-            <img src="photo.jpeg" alt="Mostafa Safwat Ibrahim" class="avatar-img" loading="eager">
-          </div>
+          <figure class="portrait-card">
+            <div class="avatar-wrapper">
+              <img
+                src="photo.jpeg"
+                alt="Mostafa Safwat Ibrahim"
+                class="avatar-img"
+                loading="eager"
+                fetchpriority="high"
+              >
+            </div>
+            <figcaption class="portrait-caption">
+              <span>From business needs to working software.</span>
+              <a href="#about">More about me <span aria-hidden="true">↗</span></a>
+            </figcaption>
+          </figure>
         </div>
       </div>
     </section>
-
-    <!-- Filterable Projects Section -->
-    <section id="projects" class="section">
+    <!-- About Section -->
+    <section id="about" class="section" aria-labelledby="about-title">
       <div class="container">
         <div class="section-header">
-          <span class="section-tag">Case Studies</span>
-          <h2>Featured Architecture</h2>
-          <p>Production systems engineered for scale, reliability, and security.</p>
+          <span class="section-tag">About me</span>
+          <h2 id="about-title">The person behind the solutions</h2>
+          <p>
+            I’m Mostafa Safwat Ibrahim. My work brings together
+            software engineering, enterprise architecture, and IT leadership.
+          </p>
         </div>
 
-        <div class="filter-group" role="tablist" aria-label="Portfolio Category Filter">
-          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Systems</button>
-          <button class="filter-btn" data-filter="backend" role="tab" aria-selected="false">Backend & APIs</button>
-          <button class="filter-btn" data-filter="architecture" role="tab" aria-selected="false">Enterprise Architecture</button>
-          <button class="filter-btn" data-filter="fullstack" role="tab" aria-selected="false">Full-Stack</button>
+        <div class="about-content">
+          <p>
+            I focus on turning business requirements into practical,
+            maintainable software, with careful attention to usability,
+            reliability, and long-term growth.
+          </p>
+          <p>
+            This portfolio shares selected projects, the problems they
+            address, and the engineering decisions behind them.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Portfolio -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Selected work</span>
+          <h2 id="projects-title">Projects in practice</h2>
+          <p>
+            Explore the interfaces, purpose, and implementation
+            behind my work.
+          </p>
         </div>
 
-        <div class="projects-grid" id="projects-grid">
-          <article class="project-card glass-panel" data-category="architecture">
-            <div class="project-body">
-              <span class="project-category">Enterprise Architecture</span>
-              <h3 class="project-title">Scalable Core Banking Gateway</h3>
-              <p class="project-description">Engineered a distributed microservices gateway handling secure financial transactions with zero downtime.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">.NET Core</span>
-                <span class="tech-tag">Microservices</span>
-                <span class="tech-tag">SQL Server</span>
-                <span class="tech-tag">Docker</span>
-              </div>
-              <a href="#contact" class="project-link">Review Blueprint &rarr;</a>
-            </div>
-          </article>
+        <article class="project-showcase" aria-labelledby="safya-title">
+          <div class="project-summary">
+            <span class="section-tag">Featured project · 01</span>
+            <h3 id="safya-title">SafyaClinic</h3>
 
-          <article class="project-card glass-panel" data-category="fullstack">
-            <div class="project-body">
-              <span class="project-category">Full-Stack</span>
-              <h3 class="project-title">SafyaClinic Management System</h3>
-              <p class="project-description">Refactored healthcare ERP utilizing repository abstractions, EF Core migrations, and strict status validations.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">C#</span>
-                <span class="tech-tag">ASP.NET MVC</span>
-                <span class="tech-tag">EF Core</span>
-                <span class="tech-tag">JavaScript</span>
-              </div>
-              <a href="#contact" class="project-link">View Case Study &rarr;</a>
-            </div>
-          </article>
+            <p>
+              A clinic management application combining a public-facing
+              website with staff tools for clinic operations and payments.
+              I worked across business analysis, application design,
+              architecture, and full-stack development.
+            </p>
 
-          <article class="project-card glass-panel" data-category="backend">
-            <div class="project-body">
-              <span class="project-category">Backend & APIs</span>
-              <h3 class="project-title">High-Velocity Analytics Engine</h3>
-              <p class="project-description">Asynchronous data processing pipeline streaming real-time transactional metrics to executive dashboards.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Django</span>
-                <span class="tech-tag">PostgreSQL</span>
-                <span class="tech-tag">Redis</span>
+            <ul class="project-highlights">
+              <li>Arabic public website and staff management interface</li>
+              <li>Payment deductions based on clinic and referral source</li>
+              <li>Historical payment rates preserved when rules change</li>
+              <li>Payment corrections and cancellations with an audit trail</li>
+            </ul>
+            <dl class="project-facts">
+              <div>
+                <dt>My role</dt>
+                <dd>
+                  Business Analyst, Application Designer,
+                  Application Architect, and Full-Stack Developer
+                </dd>
               </div>
-              <a href="#contact" class="project-link">Analyze System &rarr;</a>
+
+              <div>
+                <dt>Backend</dt>
+                <dd>C#, ASP.NET Core MVC (.NET 8), Entity Framework Core</dd>
+              </div>
+
+              <div>
+                <dt>Frontend</dt>
+                <dd>
+                  Razor Views, HTML5, CSS3, JavaScript,
+                  Bootstrap 5, and jQuery
+                </dd>
+              </div>
+
+              <div>
+                <dt>Database</dt>
+                <dd>Microsoft SQL Server</dd>
+              </div>
+            </dl>
+            <a
+              href="https://safyaclinic-demo.runasp.net/"
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Visit live demo
+              <span class="visually-hidden">(opens in a new tab)</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="project-gallery" data-gallery role="region"
+            aria-label="SafyaClinic screenshots">
+            <h4 class="gallery-heading">A closer look</h4>
+
+            <div class="gallery-slides">
+              <figure class="gallery-slide">
+                <img
+                  src="assets/projects/safyaclinic/overview.png"
+                  alt="SafyaClinic homepage with its Arabic introduction and contact action"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>
+                  <h5>Welcoming patients</h5>
+                  <p>
+                    The introduction presents the clinic and gives
+                    visitors a clear path to contact it.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <figure class="gallery-slide">
+                <img
+                  src="assets/projects/safyaclinic/mainDashBoard.png"
+                  alt="SafyaClinic dashboard showing reservation and revenue summaries with clinic navigation"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>
+                  <h5>Clinic dashboard</h5>
+                  <p>
+                    A central overview of reservations, revenue, and pending
+                    items, with navigation to clinic management features.
+                  </p>
+                </figcaption>
+              </figure>
+
+              <figure class="gallery-slide">
+                <img
+                  src="assets/projects/safyaclinic/login.png"
+                  alt="SafyaClinic staff sign-in screen with phone number and password fields"
+                  loading="lazy"
+                  decoding="async"
+                >
+                <figcaption>
+                  <h5>Staff sign-in</h5>
+                  <p>
+                    A dedicated sign-in interface for clinic staff,
+                    using a phone number and password.
+                  </p>
+                </figcaption>
+              </figure>
             </div>
-          </article>
-        </div>
+            <div class="gallery-controls" hidden>
+              <button type="button" class="gallery-button" data-previous>
+                <span aria-hidden="true">←</span> Previous
+              </button>
+
+              <p
+                class="gallery-status"
+                aria-live="polite"
+                aria-atomic="true"
+              ></p>
+
+              <button type="button" class="gallery-button" data-next>
+                Next <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </div>
+        </article>
+        <aside class="engineering-note" aria-labelledby="safya-engineering-title">
+          <span class="section-tag">Behind the implementation</span>
+          <h3 id="safya-engineering-title">
+            Keeping historical payment calculations consistent
+          </h3>
+
+          <div class="engineering-grid">
+            <div>
+              <h4>The challenge</h4>
+              <p>
+                Payment deduction rates vary by clinic and patient
+                referral source. Applying updated rates to older payments
+                would change historical financial records.
+              </p>
+            </div>
+
+            <div>
+              <h4>The implementation</h4>
+              <p>
+                I preserved the deduction rate applied to each payment,
+                rather than relying only on the current rate configuration.
+                I also implemented payment corrections and cancellations
+                with an audit trail.
+              </p>
+            </div>
+
+            <div>
+              <h4>The result</h4>
+              <p>
+                Later rate changes leave historical payment calculations
+                intact, while corrections and cancellations remain traceable.
+              </p>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -197,49 +345,40 @@
       </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section id="contact" class="section">
+    <!-- Contact -->
+    <section id="contact" class="section" aria-labelledby="contact-title">
       <div class="container contact-container">
         <div class="section-header">
-          <span class="section-tag">Direct Inquiry</span>
-          <h2>Initiate Collaboration</h2>
-          <p>Reach out for executive consulting, software architecture, or speaking engagements.</p>
+          <span class="section-tag">Get in touch</span>
+          <h2 id="contact-title">Let’s discuss your next project</h2>
+          <p>
+            For software development, application architecture,
+            or technical collaboration, reach me by email or LinkedIn.
+          </p>
         </div>
 
-        <div class="glass-panel">
-          <form id="contact-form" class="contact-form" novalidate>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="user_name" class="form-label">Full Name</label>
-                <input type="text" id="user_name" name="user_name" class="form-control" placeholder="e.g. John Doe" required>
-                <span class="error-feedback" id="name-error"></span>
-              </div>
-              <div class="form-group">
-                <label for="user_email" class="form-label">Email Address</label>
-                <input type="email" id="user_email" name="user_email" class="form-control" placeholder="e.g. john@company.com" required>
-                <span class="error-feedback" id="email-error"></span>
-              </div>
-            </div>
+        <div class="contact-panel">
+          <h3>Email me</h3>
 
-            <div class="form-group">
-              <label for="subject" class="form-label">Subject</label>
-              <input type="text" id="subject" name="subject" class="form-control" placeholder="Executive Architecture Consultation" required>
-              <span class="error-feedback" id="subject-error"></span>
-            </div>
+          <a class="contact-email" href="mailto:mostafa.safwat@gmail.com">
+            mostafa.safwat@gmail.com
+          </a>
 
-            <div class="form-group">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" name="message" class="form-control" placeholder="Outline your technical requirements or strategic objectives..." required></textarea>
-              <span class="error-feedback" id="message-error"></span>
-            </div>
+          <p class="contact-note">
+            Opens your email application. You can also copy the address
+            into your preferred email service.
+          </p>
 
-            <button type="submit" class="btn btn-primary" id="submit-btn">
-              <span>Transmit Inquiry</span>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
-            </button>
-
-            <div class="form-status" id="form-status" role="alert"></div>
-          </form>
+          <a
+            class="btn btn-secondary"
+            href="https://www.linkedin.com/in/mostafa-safwat-6a971110/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect on LinkedIn
+            <span class="visually-hidden">(opens in a new tab)</span>
+            <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
     </section>
@@ -247,7 +386,10 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="footer-text">&copy; 2026 Mostafa Safwat Ibrahim. Architected with high-performance Vanilla Standards.</p>
+      <p class="footer-text">
+        &copy; 2026 Mostafa Safwat Ibrahim.
+        Built with HTML, CSS, and JavaScript.
+      </p>
     </div>
   </footer>
 
