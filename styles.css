@@ -1004,3 +1004,63 @@ section[id] {
 #main-content {
   scroll-margin-top: 6rem;
 }
+/* Student Management System */
+.student-project {
+  margin-top: 3rem;
+}
+
+.demo-access {
+  min-width: 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.demo-access h4 {
+  margin-bottom: 1rem;
+  font-size: 1.375rem;
+  line-height: 1.3;
+}
+
+.demo-access > p {
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.demo-credentials {
+  display: grid;
+  gap: 1rem;
+  margin-block: 1.5rem;
+}
+
+.demo-credentials > div {
+  padding: 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.demo-credentials dt {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.demo-credentials dd {
+  margin: 0;
+}
+
+.demo-credentials code {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+  user-select: all;
+}
+
+.demo-access .demo-help {
+  color: var(--text-muted);
+  font-size: 0.8125rem;
+}
