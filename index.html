@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f14" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Mostafa Safwat Ibrahim — Full-Stack Developer & Systems Architect</title>
     <meta
@@ -19,32 +20,170 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <header class="site-header" id="site-header"></header>
+
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#hero">
+          <img
+            class="brand-logo"
+            src="/assets/brand/msi-metallic.png"
+            alt=""
+            width="1774"
+            height="887"
+          />
+          <span class="brand-text">
+            <span class="brand-name">Mostafa S. Ibrahim</span>
+            <span class="brand-role">full-stack · architecture · infrastructure</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul class="nav-list">
+            <li><a class="nav-link" href="#stack">Expertise</a></li>
+            <li><a class="nav-link" href="#career">Career</a></li>
+            <li><a class="nav-link" href="#developer">Developer</a></li>
+            <li><a class="nav-link" href="#work">Work</a></li>
+            <li><a class="nav-link nav-cta" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            class="icon-btn"
+            id="theme-toggle"
+            type="button"
+            aria-label="Switch to light theme"
+          >
+            <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"
+              />
+            </svg>
+            <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+            </svg>
+          </button>
+          <button
+            class="icon-btn menu-toggle"
+            id="menu-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav"
+            aria-label="Open navigation menu"
+          >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
     <main id="main" tabindex="-1">
-      <section id="hero" aria-labelledby="hero-title">
-        <h1 id="hero-title">Mostafa Safwat Ibrahim</h1>
+      <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <p class="section-label">// full-stack developer · systems architect</p>
+          <h1 id="hero-title" class="hero-title">
+            Mostafa Safwat <span class="accent">Ibrahim</span>
+          </h1>
+          <p class="hero-lead">
+            25+ years building the systems underneath, from datacenters and infrastructure to
+            architecture, and now the full-stack products that run on top.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#work">View my work</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
       </section>
-      <section id="impact" aria-label="Career in numbers"></section>
-      <section id="stack" aria-labelledby="stack-title">
-        <h2 id="stack-title">The Stack of a Career</h2>
+
+      <section id="impact" class="section" aria-label="Career in numbers">
+        <div class="container">
+          <p class="section-label">// 01 — impact</p>
+          <p class="section-lead">Animated counters arrive in Sprint 2.</p>
+        </div>
       </section>
-      <section id="career" aria-labelledby="career-title">
-        <h2 id="career-title">Career timeline</h2>
+
+      <section id="stack" class="section" aria-labelledby="stack-title">
+        <div class="container">
+          <p class="section-label">// 02 — expertise</p>
+          <h2 id="stack-title">The Stack of a Career</h2>
+          <p class="section-lead">
+            Six layers of IT, from datacenters to leadership. Interactive in Sprint 2.
+          </p>
+        </div>
       </section>
-      <section id="developer" aria-labelledby="dev-title">
-        <h2 id="dev-title">Full-stack developer</h2>
+
+      <section id="career" class="section" aria-labelledby="career-title">
+        <div class="container">
+          <p class="section-label">// 03 — career</p>
+          <h2 id="career-title">Career timeline</h2>
+          <p class="section-lead">25 years of milestones. Scroll-driven timeline in Sprint 3.</p>
+        </div>
       </section>
-      <section id="work" aria-labelledby="work-title">
-        <h2 id="work-title">Selected work</h2>
+
+      <section id="developer" class="section" aria-labelledby="dev-title">
+        <div class="container">
+          <p class="section-label">// 04 — developer</p>
+          <h2 id="dev-title">Full-stack developer</h2>
+          <p class="section-lead">
+            Languages, frameworks and tools. Filterable matrix in Sprint 3.
+          </p>
+        </div>
       </section>
-      <section id="built" aria-labelledby="built-title">
-        <h2 id="built-title">How this site is built</h2>
+
+      <section id="work" class="section" aria-labelledby="work-title">
+        <div class="container">
+          <p class="section-label">// 05 — work</p>
+          <h2 id="work-title">Selected work</h2>
+          <p class="section-lead">
+            Live demos and motion previews. Interactive gallery in Sprint 4.
+          </p>
+        </div>
       </section>
-      <section id="contact" aria-labelledby="contact-title">
-        <h2 id="contact-title">Contact</h2>
+
+      <section id="built" class="section" aria-labelledby="built-title">
+        <div class="container">
+          <p class="section-label">// 06 — this site</p>
+          <h2 id="built-title">How this site is built</h2>
+          <p class="section-lead">Architecture, performance scores and source. Sprint 5.</p>
+        </div>
+      </section>
+
+      <section id="contact" class="section" aria-labelledby="contact-title">
+        <div class="container">
+          <p class="section-label">// 07 — contact</p>
+          <h2 id="contact-title">Let's build something</h2>
+          <p class="section-lead">
+            For software development, architecture or technical leadership, email me or connect on
+            LinkedIn.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="mailto:mostafa.safwat@gmail.com"
+              >mostafa.safwat@gmail.com</a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://www.linkedin.com/in/mostafa-safwat-6a971110/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn <span class="visually-hidden">(opens in a new tab)</span
+              ><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="site-footer"></footer>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span data-year>2026</span> Mostafa Safwat Ibrahim</p>
+        <p>Built with TypeScript, Vite and GSAP · <a href="#built">how this site is built</a></p>
+      </div>
+    </footer>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
