@@ -162,13 +162,14 @@
     transition:
       opacity var(--dur-ui) var(--ease-out),
       transform var(--dur-ui) var(--ease-out),
-      visibility var(--dur-ui);
+      visibility 0s linear var(--dur-ui);
   }
 
   .site-nav.is-open {
     opacity: 1;
     visibility: visible;
     transform: none;
+    transition-delay: 0s; /* show instantly so focus() can reach the links */
   }
 
   .nav-list {
