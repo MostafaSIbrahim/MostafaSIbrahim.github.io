@@ -20,7 +20,11 @@
       "Bootstrap 5",
       "jQuery"
     ],
-    "tags": [".NET", "Full-stack", "Healthcare"],
+    "tags": [
+      ".NET",
+      "Full-stack",
+      "Healthcare"
+    ],
     "challenge": "Payment deduction rates vary by clinic and referral source. Applying updated rates to older payments would silently change historical financial records.",
     "solution": "Each payment stores the deduction rate applied at the time, instead of relying only on the current rate configuration. Corrections and cancellations go through an audit trail.",
     "result": "Rate changes leave historical payment calculations intact, and every correction or cancellation stays traceable.",
@@ -51,9 +55,21 @@
     "title": "Student Management System",
     "year": "2026",
     "tagline": "Student records web app: search by name, email or ID, with departments and enrollment status.",
-    "role": ["Full-Stack Developer"],
-    "stack": ["Python", "REST APIs", "MySQL", "HTML5 & CSS3", "JavaScript"],
-    "tags": ["Python", "Full-stack", "Education"],
+    "role": [
+      "Full-Stack Developer"
+    ],
+    "stack": [
+      "Python",
+      "REST APIs",
+      "MySQL",
+      "HTML5 & CSS3",
+      "JavaScript"
+    ],
+    "tags": [
+      "Python",
+      "Full-stack",
+      "Education"
+    ],
     "challenge": "Keep student records easy to browse and search across departments and enrollment states.",
     "solution": "A Python back end exposes a REST API over MySQL; the web interface searches by name, email or ID and shows enrollment details.",
     "result": "Live on Render with a read-only demo account and sample data, so anyone can explore it safely.",
@@ -79,9 +95,23 @@
     "title": "This portal",
     "year": "2026",
     "tagline": "A data-driven profile site in TypeScript, Vite and GSAP, with no UI framework.",
-    "role": ["Designer", "Architect", "Front-End Developer"],
-    "stack": ["TypeScript", "Vite", "GSAP", "Canvas 2D", "CSS 3D", "GitHub Actions"],
-    "tags": ["Frontend", "TypeScript"],
+    "role": [
+      "Designer",
+      "Architect",
+      "Front-End Developer"
+    ],
+    "stack": [
+      "TypeScript",
+      "Vite",
+      "GSAP",
+      "Canvas 2D",
+      "CSS 3D",
+      "GitHub Actions"
+    ],
+    "tags": [
+      "Frontend",
+      "TypeScript"
+    ],
     "challenge": "Show 25+ years across six IT domains without overwhelming the reader, while proving current front-end skills in the site itself.",
     "solution": "Content lives in typed JSON files rendered by small TypeScript modules. Motion uses Canvas, CSS 3D and GSAP, and every effect has a reduced-motion fallback.",
     "result": "About 60 KB of JavaScript, keyboard and screen-reader friendly, and every animation can be paused.",
@@ -112,6 +142,26 @@
           "caption": "Developer section: Flip-animated filters and real source code."
         }
       ]
+    }
+  },
+  {
+    "slug": "test-project",
+    "title": "Test-Project",
+    "year": "2026",
+    "tagline": "test",
+    "role": [],
+    "stack": [
+      "HTML"
+    ],
+    "tags": [
+      "trst"
+    ],
+    "challenge": "trst",
+    "solution": "trst",
+    "result": "trst",
+    "media": {
+      "poster": "/assets/projects/test-project/cover-mvl81l7y.webp",
+      "screenshots": []
     }
   }
 ]
