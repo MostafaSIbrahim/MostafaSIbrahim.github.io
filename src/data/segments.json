@@ -1,1 +1,90 @@
-[]
+[
+  {
+    "id": "datacenters",
+    "title": "Datacenters",
+    "years": "",
+    "summary": "The physical foundation: the rooms, racks, power and networks that everything else depends on.",
+    "responsibilities": [
+      "Planning and running datacenter capacity: racks, power, cooling and cabling",
+      "Physical and network infrastructure for business-critical systems",
+      "Availability, backup and disaster-recovery planning"
+    ],
+    "platforms": [],
+    "outcomes": []
+  },
+  {
+    "id": "infrastructure",
+    "title": "System infrastructure",
+    "years": "",
+    "summary": "Servers, storage, virtualization and networks, run so that applications simply stay up.",
+    "responsibilities": [
+      "Building and operating server, storage and virtualization platforms",
+      "Identity, networking and security baselines across the estate",
+      "Monitoring, patching and capacity management"
+    ],
+    "platforms": [],
+    "outcomes": []
+  },
+  {
+    "id": "architecture",
+    "title": "System architecture",
+    "years": "",
+    "summary": "Deciding how systems fit together, so they scale, integrate and survive change.",
+    "responsibilities": [
+      "Target architectures and technology roadmaps",
+      "Integration patterns between business systems",
+      "Standards, reviews and technical governance"
+    ],
+    "platforms": [],
+    "outcomes": []
+  },
+  {
+    "id": "development",
+    "title": "System design & development",
+    "years": "",
+    "summary": "Turning requirements into working full-stack software, from data model to interface.",
+    "responsibilities": [
+      "Business analysis and application design",
+      "Full-stack development: database, API, back end and front end",
+      "Maintainable code, audit trails and data integrity by design"
+    ],
+    "platforms": [
+      "C#",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "SQL Server",
+      "Python",
+      "REST APIs",
+      "MySQL",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "outcomes": []
+  },
+  {
+    "id": "product",
+    "title": "Product ownership",
+    "years": "",
+    "summary": "Owning what gets built and why: priorities, backlog and value delivered.",
+    "responsibilities": [
+      "Product vision, backlog and prioritization",
+      "Translating stakeholder needs into user stories and acceptance criteria",
+      "Working with delivery teams through releases"
+    ],
+    "platforms": [],
+    "outcomes": []
+  },
+  {
+    "id": "leadership",
+    "title": "IT leadership",
+    "years": "",
+    "summary": "Leading the people, budgets and strategy that keep IT aligned with the business.",
+    "responsibilities": [
+      "IT strategy aligned with business goals",
+      "Leading and growing technical teams",
+      "Vendor, budget and risk management"
+    ],
+    "platforms": [],
+    "outcomes": []
+  }
+]
