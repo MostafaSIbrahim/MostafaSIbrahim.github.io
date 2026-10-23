@@ -84,6 +84,12 @@ export function initStack(host: HTMLElement): void {
     });
   });
 
+  // Other sections (e.g. the career timeline) can ask for a layer by id.
+  document.addEventListener('stack:select', (event) => {
+    const index = segments.findIndex((s) => s.id === event.detail);
+    if (index !== -1) select(index, false);
+  });
+
   const start = segments.findIndex((s) => s.id === DEFAULT_SEGMENT);
   select(start === -1 ? 0 : start, false);
   host.replaceChildren(tablist, panelArea);

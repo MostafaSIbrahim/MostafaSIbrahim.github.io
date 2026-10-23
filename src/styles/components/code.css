@@ -1,0 +1,102 @@
+.code-window {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.code-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.code-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.code-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.code-file {
+  color: var(--text-muted);
+}
+
+.code-source {
+  margin-left: auto;
+}
+
+.code-body {
+  max-height: 460px;
+  margin: 0;
+  padding: var(--space-4) 0;
+  overflow: auto;
+  font-size: 0.78rem;
+  line-height: 1.7;
+  counter-reset: line;
+}
+
+.code-body code {
+  font-size: inherit;
+}
+
+.code-line {
+  display: inline-block;
+  min-width: 100%;
+  padding-right: var(--space-4);
+  counter-increment: line;
+}
+
+.code-line::before {
+  content: counter(line);
+  display: inline-block;
+  width: 3.5ch;
+  margin-right: 2ch;
+  color: var(--text-muted);
+  opacity: 0.6;
+  text-align: right;
+  user-select: none;
+}
+
+.tok-comment {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.tok-string {
+  color: var(--ok);
+}
+
+.tok-keyword {
+  color: var(--accent);
+}
+
+.tok-number {
+  color: var(--accent-2);
+}
+
+.tok-type {
+  color: var(--accent-2);
+}
+
+.tok-fn {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.code-window figcaption {
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}

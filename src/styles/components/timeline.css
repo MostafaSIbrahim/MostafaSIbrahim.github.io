@@ -1,0 +1,206 @@
+/* ---- Career carousel: cards around a 3D cylinder ---- */
+.carousel {
+  --card-w: min(360px, 78vw);
+  --card-h: 380px; /* JS sets the real height of the tallest card */
+  --radius: 480px; /* JS sets it from the card width and count */
+  --dur-carousel: 900ms;
+
+  margin-top: var(--space-8);
+  overflow-x: clip; /* side cards may poke out; never widen the page */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel {
+    --dur-carousel: 0ms;
+  }
+}
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.carousel-toggle {
+  min-width: 72px;
+  min-height: 44px;
+  padding-inline: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.carousel-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.carousel-status {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.carousel-stage {
+  margin-top: var(--space-6);
+  padding-block: var(--space-4);
+  perspective: 1800px;
+  touch-action: pan-y; /* vertical page scroll still works; horizontal drags swipe */
+  user-select: none;
+}
+
+.carousel-ring {
+  position: relative;
+  height: var(--card-h);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: translateZ(calc(-1 * var(--radius))) rotateY(var(--rotation, 0deg));
+  transform-style: preserve-3d;
+  transition: transform var(--dur-carousel) cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+.milestone {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: var(--card-w);
+  height: var(--card-h);
+  margin-left: calc(var(--card-w) / -2);
+  padding: var(--space-6);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  opacity: calc(1 - var(--dist, 0) * 0.3);
+  filter: saturate(calc(1 - var(--dist, 0) * 0.4));
+  transform: rotateY(var(--angle)) translateZ(var(--radius));
+  backface-visibility: hidden;
+  cursor: pointer;
+  transition:
+    opacity var(--dur-carousel) ease,
+    border-color var(--dur-carousel) ease,
+    box-shadow var(--dur-carousel) ease;
+}
+
+.milestone.is-front {
+  border-color: var(--accent);
+  box-shadow: 0 24px 60px -24px color-mix(in srgb, var(--accent) 45%, transparent);
+  cursor: default;
+}
+
+.milestone-year {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.milestone-role {
+  margin-top: var(--space-2);
+  font-size: 1.3rem;
+}
+
+.milestone-org {
+  margin-top: var(--space-1);
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.milestone-points {
+  display: grid;
+  gap: var(--space-2);
+  margin: var(--space-4) 0 var(--space-4);
+  padding-left: 1.1em;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.milestone-points li::marker {
+  color: var(--accent);
+}
+
+.milestone-segment {
+  align-self: flex-start;
+  margin-top: auto; /* pin the chip to the bottom of the card */
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+.milestone-segment:hover {
+  border-color: var(--accent);
+}
+
+/* ---- Year chips under the ring ---- */
+.carousel-years {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+}
+
+.carousel-year {
+  min-width: 56px;
+  min-height: 36px;
+  padding-inline: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.carousel-year:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.carousel-year[aria-current='true'] {
+  border-color: var(--accent-2);
+  background: var(--accent-2);
+  color: var(--on-accent);
+}
+
+@media (max-width: 600px) {
+  .milestone {
+    padding: var(--space-4);
+  }
+
+  .milestone-role {
+    font-size: 1.15rem;
+  }
+
+  .milestone-points {
+    font-size: 0.88rem;
+  }
+
+  .carousel-status {
+    display: none;
+  }
+
+  .carousel-controls {
+    justify-content: space-between;
+  }
+}

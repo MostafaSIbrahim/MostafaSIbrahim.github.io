@@ -6,4 +6,7 @@
 @import './components/hero.css';
 @import './components/stats.css';
 @import './components/stack.css';
+@import './components/timeline.css';
+@import './components/skills.css';
+@import './components/code.css';
 @import './components/footer.css';

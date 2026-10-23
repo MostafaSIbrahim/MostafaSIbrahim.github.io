@@ -2,89 +2,110 @@
   {
     "id": "datacenters",
     "title": "Datacenters",
-    "years": "",
+    "years": "2005 – present",
     "summary": "The physical foundation: the rooms, racks, power and networks that everything else depends on.",
     "responsibilities": [
-      "Planning and running datacenter capacity: racks, power, cooling and cabling",
-      "Physical and network infrastructure for business-critical systems",
-      "Availability, backup and disaster-recovery planning"
+      "Datacenter manager (2005 – 2008)",
+      "Designed and certified Egypt National Post's primary and disaster-recovery datacenters",
+      "Led datacenter consolidation at NPA",
+      "Resilience and availability for mission-critical digital services"
     ],
-    "platforms": [],
-    "outcomes": []
+    "platforms": ["Uptime Institute Tier IV", "Uptime Institute Tier III"],
+    "outcomes": [
+      "Tier IV primary and Tier III DR datacenters certified",
+      "99.995% uptime for mission-critical services"
+    ]
   },
   {
     "id": "infrastructure",
     "title": "System infrastructure",
-    "years": "",
-    "summary": "Servers, storage, virtualization and networks, run so that applications simply stay up.",
+    "years": "1999 – present",
+    "summary": "Servers, storage, cloud and networks, run so that applications simply stay up.",
     "responsibilities": [
-      "Building and operating server, storage and virtualization platforms",
-      "Identity, networking and security baselines across the estate",
-      "Monitoring, patching and capacity management"
+      "System engineering and administration since 1999",
+      "Group infrastructure at Integrated Diagnostic Holdings (IDH), supporting telehealth",
+      "Full-scale infrastructure overhaul at NPA, replacing legacy systems",
+      "Migration of legacy systems to AWS and Azure"
     ],
-    "platforms": [],
-    "outcomes": []
+    "platforms": [
+      "Oracle Database",
+      "AWS",
+      "Microsoft Azure",
+      "Hybrid cloud",
+      "Containers",
+      "SAP ERP"
+    ],
+    "outcomes": ["60% improved reliability after the cloud migration"]
   },
   {
     "id": "architecture",
     "title": "System architecture",
-    "years": "",
+    "years": "2005 – present",
     "summary": "Deciding how systems fit together, so they scale, integrate and survive change.",
     "responsibilities": [
-      "Target architectures and technology roadmaps",
-      "Integration patterns between business systems",
-      "Standards, reviews and technical governance"
+      "System analysis and design (2005 – 2008)",
+      "Solution architect for e-governance and justice-sector platforms at MCIT",
+      "Core banking modernization on Temenos T24 with AI-driven analytics",
+      "Cloud-first application transformation with containers and hybrid cloud"
     ],
-    "platforms": [],
-    "outcomes": []
+    "platforms": ["Temenos T24", "SAP ERP", "Azure", "AWS", "Containers"],
+    "outcomes": ["21+ large-scale government digital projects delivered"]
   },
   {
     "id": "development",
     "title": "System design & development",
-    "years": "",
-    "summary": "Turning requirements into working full-stack software, from data model to interface.",
+    "years": "1999 – 2004 · 2023 – present",
+    "summary": "Where I started, and where I came back to: turning requirements into working full-stack software.",
     "responsibilities": [
-      "Business analysis and application design",
-      "Full-stack development: database, API, back end and front end",
-      "Maintainable code, audit trails and data integrity by design"
+      "C/C++ and Oracle development early in my career (1999 – 2004)",
+      "Back to code since 2023: Python, Django, JavaScript, .NET and modern web practices",
+      "Clean Architecture .NET Core solutions with audit trails and data integrity by design",
+      "Business analysis, application design and full-stack delivery"
     ],
     "platforms": [
       "C#",
       "ASP.NET Core",
       "Entity Framework Core",
-      "SQL Server",
       "Python",
-      "REST APIs",
-      "MySQL",
+      "Django",
       "JavaScript",
-      "TypeScript"
+      "TypeScript",
+      "REST APIs",
+      "SQL Server",
+      "MySQL",
+      "PostgreSQL",
+      "C/C++",
+      "Oracle"
     ],
-    "outcomes": []
+    "outcomes": [
+      "Two full-stack applications live with public demos (2026)",
+      "AWS CI/CD Diploma (2023)"
+    ]
   },
   {
     "id": "product",
     "title": "Product ownership",
-    "years": "",
+    "years": "2008 – present",
     "summary": "Owning what gets built and why: priorities, backlog and value delivered.",
     "responsibilities": [
-      "Product vision, backlog and prioritization",
-      "Translating stakeholder needs into user stories and acceptance criteria",
-      "Working with delivery teams through releases"
+      "PMO leadership across 21+ government digital projects",
+      "Launched NPA's mobile and online banking platforms",
+      "Agile and DevOps delivery with cross-functional teams"
     ],
-    "platforms": [],
-    "outcomes": []
+    "platforms": ["PMP", "Agile", "DevOps", "CRM", "E-Commerce", "CMS"],
+    "outcomes": ["+35% digital adoption after the mobile and online banking launch"]
   },
   {
     "id": "leadership",
     "title": "IT leadership",
-    "years": "",
+    "years": "2015 – present",
     "summary": "Leading the people, budgets and strategy that keep IT aligned with the business.",
     "responsibilities": [
-      "IT strategy aligned with business goals",
-      "Leading and growing technical teams",
-      "Vendor, budget and risk management"
+      "CDO / CIO of Egypt National Post: digital strategy for 4,400+ branches",
+      "CEO & co-founder of Wave-Line, a mobile towers service provider",
+      "Cybersecurity, compliance, budget and vendor management"
     ],
-    "platforms": [],
-    "outcomes": []
+    "platforms": ["ISO 27001", "GDPR", "HIPAA", "ITIL", "SANS"],
+    "outcomes": ["50% fewer security incidents", "+35% digital adoption"]
   }
 ]

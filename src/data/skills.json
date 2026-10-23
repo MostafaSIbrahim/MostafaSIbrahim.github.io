@@ -1,1 +1,34 @@
-[]
+[
+  { "name": "C#", "group": "languages", "projects": ["safyaclinic"] },
+  { "name": "Python", "group": "languages", "projects": ["student-management"] },
+  { "name": "TypeScript", "group": "languages", "projects": ["portal"] },
+  { "name": "JavaScript", "group": "languages", "projects": ["safyaclinic", "portal"] },
+  { "name": "SQL", "group": "languages", "projects": ["safyaclinic", "student-management"] },
+  { "name": "C/C++", "group": "languages", "projects": [] },
+  { "name": "ASP.NET Core MVC (.NET 8)", "group": "backend", "projects": ["safyaclinic"] },
+  { "name": "Entity Framework Core", "group": "backend", "projects": ["safyaclinic"] },
+  { "name": "REST APIs", "group": "backend", "projects": ["student-management"] },
+  { "name": "Django", "group": "backend", "projects": [] },
+  { "name": "Clean Architecture", "group": "backend", "projects": ["safyaclinic"] },
+  { "name": "Razor Views", "group": "frontend", "projects": ["safyaclinic"] },
+  {
+    "name": "HTML5 & CSS3",
+    "group": "frontend",
+    "projects": ["safyaclinic", "student-management", "portal"]
+  },
+  { "name": "Bootstrap 5", "group": "frontend", "projects": ["safyaclinic"] },
+  { "name": "jQuery", "group": "frontend", "projects": ["safyaclinic"] },
+  { "name": "GSAP", "group": "frontend", "projects": ["portal"] },
+  { "name": "Canvas 2D", "group": "frontend", "projects": ["portal"] },
+  { "name": "Microsoft SQL Server", "group": "data", "projects": ["safyaclinic"] },
+  { "name": "MySQL", "group": "data", "projects": ["student-management"] },
+  { "name": "PostgreSQL", "group": "data", "projects": [] },
+  { "name": "Oracle Database", "group": "data", "projects": [] },
+  { "name": "GitHub Actions", "group": "devops", "projects": ["portal"] },
+  { "name": "GitHub Pages", "group": "devops", "projects": ["portal"] },
+  { "name": "Render", "group": "devops", "projects": ["student-management"] },
+  { "name": "AWS", "group": "devops", "projects": [] },
+  { "name": "Git", "group": "tools", "projects": ["safyaclinic", "student-management", "portal"] },
+  { "name": "Vite", "group": "tools", "projects": ["portal"] },
+  { "name": "ESLint & Prettier", "group": "tools", "projects": ["portal"] }
+]
