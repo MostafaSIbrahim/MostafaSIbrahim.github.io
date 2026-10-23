@@ -82,11 +82,25 @@
 
     <main id="main" tabindex="-1">
       <section id="hero" class="hero" aria-labelledby="hero-title">
+        <canvas class="hero-canvas" aria-hidden="true"></canvas>
         <div class="container">
           <p class="section-label">// full-stack developer · systems architect</p>
           <h1 id="hero-title" class="hero-title">
             Mostafa Safwat <span class="accent">Ibrahim</span>
           </h1>
+          <p class="hero-terminal">
+            <span class="prompt" aria-hidden="true">$</span>
+            <span
+              data-typewriter
+              data-words='["Full-stack developer","System architect","Infrastructure engineer","Product owner"]'
+              aria-hidden="true"
+              >Full-stack developer</span
+            ><span class="caret" aria-hidden="true"></span>
+            <span class="visually-hidden"
+              >Full-stack developer, system architect, infrastructure engineer and product
+              owner.</span
+            >
+          </p>
           <p class="hero-lead">
             25+ years building the systems underneath, from datacenters and infrastructure to
             architecture, and now the full-stack products that run on top.
@@ -101,7 +115,28 @@
       <section id="impact" class="section" aria-label="Career in numbers">
         <div class="container">
           <p class="section-label">// 01 — impact</p>
-          <p class="section-lead">Animated counters arrive in Sprint 2.</p>
+          <ul class="stats">
+            <li class="stat">
+              <span class="stat-value" data-count="25" data-suffix="+" aria-hidden="true">25+</span>
+              <span class="stat-label"><span class="visually-hidden">25+ </span>years in IT</span>
+            </li>
+            <li class="stat">
+              <span class="stat-value" data-count="6" aria-hidden="true">6</span>
+              <span class="stat-label"
+                ><span class="visually-hidden">6 </span>IT domains covered</span
+              >
+            </li>
+            <li class="stat">
+              <span class="stat-value" data-count="4" aria-hidden="true">4</span>
+              <span class="stat-label"
+                ><span class="visually-hidden">4 </span>languages in production</span
+              >
+            </li>
+            <li class="stat">
+              <span class="stat-value" data-count="2" aria-hidden="true">2</span>
+              <span class="stat-label"><span class="visually-hidden">2 </span>live demos</span>
+            </li>
+          </ul>
         </div>
       </section>
 
@@ -110,8 +145,14 @@
           <p class="section-label">// 02 — expertise</p>
           <h2 id="stack-title">The Stack of a Career</h2>
           <p class="section-lead">
-            Six layers of IT, from datacenters to leadership. Interactive in Sprint 2.
+            Six layers of IT, each built on the one below. Pick a layer to see what I did there.
           </p>
+          <div class="stack" data-stack>
+            <p>
+              Datacenters · System infrastructure · System architecture · System design &amp;
+              development · Product ownership · IT leadership
+            </p>
+          </div>
         </div>
       </section>
 
