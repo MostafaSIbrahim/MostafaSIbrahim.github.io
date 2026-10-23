@@ -3,3 +3,5 @@ legacy
 public
 node_modules
 package-lock.json
+# Written by the admin page with JSON.stringify; keep its formatting as is
+src/data/projects.json

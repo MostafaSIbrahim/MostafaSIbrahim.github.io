@@ -1,3 +1,4 @@
+import projectsData from '../data/projects.json';
 import skillsData from '../data/skills.json';
 import type { Skill, SkillGroup } from '../types/content';
 import { h } from '../lib/dom';
@@ -13,12 +14,10 @@ const GROUPS: Record<SkillGroup, string> = {
   tools: 'Tools',
 };
 
-// Until projects.json is filled in Sprint 4.
-const PROJECT_NAMES: Record<string, string> = {
-  safyaclinic: 'SafyaClinic',
-  'student-management': 'Student Management',
-  portal: 'This portal',
-};
+// Project slug -> display name, straight from the portfolio data.
+const PROJECT_NAMES: Record<string, string> = Object.fromEntries(
+  projectsData.map((p) => [p.slug, p.title]),
+);
 
 type Filter = SkillGroup | 'all';
 

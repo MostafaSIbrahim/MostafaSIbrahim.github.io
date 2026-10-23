@@ -40,3 +40,23 @@
   border-color: var(--accent);
   color: var(--accent);
 }
+
+/* <button class="btn btn-ghost"> must not pick up the browser's grey button fill */
+button.btn {
+  font: inherit;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.btn:disabled:active {
+  transform: none;
+}

@@ -1,1 +1,117 @@
-[]
+[
+  {
+    "slug": "safyaclinic",
+    "title": "SafyaClinic",
+    "year": "2026",
+    "tagline": "Clinic management: an Arabic public website plus staff tools for operations and payments.",
+    "role": [
+      "Business Analyst",
+      "Application Designer",
+      "Application Architect",
+      "Full-Stack Developer"
+    ],
+    "stack": [
+      "C#",
+      "ASP.NET Core MVC (.NET 8)",
+      "Entity Framework Core",
+      "Microsoft SQL Server",
+      "Clean Architecture",
+      "Razor Views",
+      "Bootstrap 5",
+      "jQuery"
+    ],
+    "tags": [".NET", "Full-stack", "Healthcare"],
+    "challenge": "Payment deduction rates vary by clinic and referral source. Applying updated rates to older payments would silently change historical financial records.",
+    "solution": "Each payment stores the deduction rate applied at the time, instead of relying only on the current rate configuration. Corrections and cancellations go through an audit trail.",
+    "result": "Rate changes leave historical payment calculations intact, and every correction or cancellation stays traceable.",
+    "demoUrl": "https://safyaclinic-demo.runasp.net/",
+    "media": {
+      "poster": "/assets/projects/safyaclinic/dashboard.webp",
+      "screenshots": [
+        {
+          "src": "/assets/projects/safyaclinic/dashboard.webp",
+          "alt": "SafyaClinic dashboard showing reservation and revenue summaries with clinic navigation",
+          "caption": "Clinic dashboard: reservations, revenue and pending items at a glance."
+        },
+        {
+          "src": "/assets/projects/safyaclinic/overview.webp",
+          "alt": "SafyaClinic homepage with its Arabic introduction and contact action",
+          "caption": "Public website: introduces the clinic and gives patients a clear way to get in touch."
+        },
+        {
+          "src": "/assets/projects/safyaclinic/login.webp",
+          "alt": "SafyaClinic staff sign-in screen with phone number and password fields",
+          "caption": "Staff sign-in by phone number and password."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "student-management",
+    "title": "Student Management System",
+    "year": "2026",
+    "tagline": "Student records web app: search by name, email or ID, with departments and enrollment status.",
+    "role": ["Full-Stack Developer"],
+    "stack": ["Python", "REST APIs", "MySQL", "HTML5 & CSS3", "JavaScript"],
+    "tags": ["Python", "Full-stack", "Education"],
+    "challenge": "Keep student records easy to browse and search across departments and enrollment states.",
+    "solution": "A Python back end exposes a REST API over MySQL; the web interface searches by name, email or ID and shows enrollment details.",
+    "result": "Live on Render with a read-only demo account and sample data, so anyone can explore it safely.",
+    "demoUrl": "https://studentmanagementsystem-ck3k.onrender.com/",
+    "credentials": {
+      "username": "demo_viewer",
+      "password": "viewdemo",
+      "note": "Public read-only demo account with sample data. The free host may take up to a minute to wake up."
+    },
+    "media": {
+      "poster": "/assets/projects/student-management/students.webp",
+      "screenshots": [
+        {
+          "src": "/assets/projects/student-management/students.webp",
+          "alt": "Student records screen with a search field and sample students listed by department and enrollment status",
+          "caption": "Student records with search and enrollment status."
+        }
+      ]
+    }
+  },
+  {
+    "slug": "portal",
+    "title": "This portal",
+    "year": "2026",
+    "tagline": "A data-driven profile site in TypeScript, Vite and GSAP, with no UI framework.",
+    "role": ["Designer", "Architect", "Front-End Developer"],
+    "stack": ["TypeScript", "Vite", "GSAP", "Canvas 2D", "CSS 3D", "GitHub Actions"],
+    "tags": ["Frontend", "TypeScript"],
+    "challenge": "Show 25+ years across six IT domains without overwhelming the reader, while proving current front-end skills in the site itself.",
+    "solution": "Content lives in typed JSON files rendered by small TypeScript modules. Motion uses Canvas, CSS 3D and GSAP, and every effect has a reduced-motion fallback.",
+    "result": "About 60 KB of JavaScript, keyboard and screen-reader friendly, and every animation can be paused.",
+    "sourceUrl": "https://github.com/MostafaSIbrahim/MostafaSIbrahim.github.io",
+    "media": {
+      "poster": "/assets/projects/portal/poster.webp",
+      "previewMp4": "/assets/projects/portal/preview.mp4",
+      "previewWebm": "/assets/projects/portal/preview.webm",
+      "screenshots": [
+        {
+          "src": "/assets/projects/portal/hero.webp",
+          "alt": "Portal hero with the animated node network, name and typing terminal line",
+          "caption": "Hero: a live Canvas network that reacts to the cursor."
+        },
+        {
+          "src": "/assets/projects/portal/stack.webp",
+          "alt": "The Stack of a Career: six isometric layers beside a detail panel",
+          "caption": "The Stack of a Career: an accessible tabs pattern drawn as SVG slabs."
+        },
+        {
+          "src": "/assets/projects/portal/career.webp",
+          "alt": "Career timeline as a 3D carousel with the front card in focus",
+          "caption": "Career timeline: a CSS 3D carousel with autoplay you can pause."
+        },
+        {
+          "src": "/assets/projects/portal/developer.webp",
+          "alt": "Filterable technology grid beside a syntax-highlighted code window",
+          "caption": "Developer section: Flip-animated filters and real source code."
+        }
+      ]
+    }
+  }
+]

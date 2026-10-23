@@ -1,0 +1,186 @@
+.gallery {
+  margin-top: var(--space-8);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  padding: 0;
+  list-style: none;
+}
+
+.project-card {
+  position: relative;
+  perspective: 1000px;
+}
+
+.project-card[hidden] {
+  display: none;
+}
+
+.project-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition:
+    transform var(--dur-ui) var(--ease-out),
+    border-color var(--dur-ui) var(--ease-out),
+    box-shadow var(--dur-ui) var(--ease-out);
+}
+
+.project-card.is-hot .project-inner {
+  border-color: var(--accent);
+  box-shadow: 0 24px 60px -28px color-mix(in srgb, var(--accent) 50%, transparent);
+  transition-duration: 120ms; /* follow the pointer closely while tilting */
+}
+
+.project-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface-2);
+}
+
+.project-media img,
+.project-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition:
+    transform var(--dur-reveal) var(--ease-out),
+    opacity var(--dur-ui) var(--ease-out);
+}
+
+.project-video {
+  opacity: 0;
+}
+
+.project-card.is-hot .project-video {
+  opacity: 1;
+}
+
+.project-card.is-hot .project-media img {
+  transform: scale(1.04);
+}
+
+.project-live,
+.project-motion {
+  position: absolute;
+  top: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter: blur(6px);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.project-live {
+  left: var(--space-3);
+  color: var(--ok);
+}
+
+.project-live::before {
+  content: '● ';
+}
+
+.project-motion {
+  right: var(--space-3);
+  color: var(--text);
+}
+
+.project-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+}
+
+.project-meta {
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.project-title {
+  font-size: 1.4rem;
+}
+
+/* The title button covers the whole card, so anywhere opens the case study */
+.project-open {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.project-open::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--radius-lg);
+}
+
+.project-open:focus-visible {
+  outline: none;
+}
+
+.project-open:focus-visible::after {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.project-tagline {
+  color: var(--text-muted);
+}
+
+.chip-more {
+  color: var(--text-muted);
+}
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-top: auto;
+  padding-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.project-cta {
+  color: var(--accent);
+}
+
+/* Sits above the stretched title button so it stays clickable */
+.project-demo {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+}
+
+.project-demo:hover {
+  border-color: var(--ok);
+  color: var(--ok);
+}
