@@ -9,11 +9,13 @@ export interface Segment {
 }
 
 export interface Milestone {
-  year: number;
+  start: number; // sort key (year)
+  period: string; // shown on the card, e.g. 'Dec 2020 – Present'
+  chip?: string; // short label for the year button; defaults to `start`
   role: string;
   org: string;
-  segment: Segment['id'];
-  highlight: string;
+  segment?: Segment['id']; // links the card to a layer of the Stack
+  highlights: string[];
 }
 
 export type SkillGroup = 'languages' | 'backend' | 'frontend' | 'data' | 'devops' | 'tools';
@@ -21,7 +23,7 @@ export type SkillGroup = 'languages' | 'backend' | 'frontend' | 'data' | 'devops
 export interface Skill {
   name: string;
   group: SkillGroup;
-  years: number;
+  years?: number; // hands-on years; hidden when absent
   projects: string[]; // project slugs
 }
 
