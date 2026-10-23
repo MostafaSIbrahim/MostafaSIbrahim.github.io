@@ -30,6 +30,7 @@ export interface Skill {
 export interface Project {
   slug: string; // 'safyaclinic' -> #work/safyaclinic
   title: string;
+  year?: string;
   tagline: string;
   role: string[];
   stack: string[]; // skill names

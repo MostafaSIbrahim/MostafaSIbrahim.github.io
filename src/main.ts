@@ -14,6 +14,7 @@ import { initStack } from './modules/stack';
 import { initTimeline } from './modules/timeline';
 import { initSkills } from './modules/skills';
 import { initCodePanel } from './modules/code-panel';
+import { initGallery } from './modules/gallery';
 
 initTheme(qs<HTMLButtonElement>('#theme-toggle'));
 initNav();
@@ -24,6 +25,7 @@ initStack(qs('[data-stack]'));
 initTimeline(qs('[data-timeline]'));
 initSkills(qs('[data-skills]'));
 initCodePanel(qs('[data-code-panel]'));
+initGallery(qs('[data-gallery]'));
 
 qs('[data-year]').textContent = String(new Date().getFullYear());
 

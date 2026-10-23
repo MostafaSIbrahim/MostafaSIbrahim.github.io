@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <!-- Only this site and GitHub's API/raw files; ws: is for Vite's dev server -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://raw.githubusercontent.com; media-src 'self' blob: https://raw.githubusercontent.com; connect-src 'self' https://api.github.com ws:; font-src 'self' data:; base-uri 'none'; form-action 'none'"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Portfolio admin</title>
+  </head>
+  <body>
+    <main id="admin" class="admin container">
+      <p>Loading the admin…</p>
+      <noscript>The admin page needs JavaScript.</noscript>
+    </main>
+    <p id="admin-live" class="visually-hidden" role="status" aria-live="polite"></p>
+    <script type="module" src="/src/admin/main.ts"></script>
+  </body>
+</html>
