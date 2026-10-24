@@ -143,25 +143,5 @@
         }
       ]
     }
-  },
-  {
-    "slug": "test-project",
-    "title": "Test-Project",
-    "year": "2026",
-    "tagline": "test",
-    "role": [],
-    "stack": [
-      "HTML"
-    ],
-    "tags": [
-      "trst"
-    ],
-    "challenge": "trst",
-    "solution": "trst",
-    "result": "trst",
-    "media": {
-      "poster": "/assets/projects/test-project/cover-mvl81l7y.webp",
-      "screenshots": []
-    }
   }
 ]
