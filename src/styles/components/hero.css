@@ -1,0 +1,82 @@
+.hero {
+  display: grid;
+  align-items: center;
+  min-height: calc(100svh - var(--header-h));
+  padding-block: var(--space-12);
+}
+
+.hero-title {
+  margin-block: var(--space-4) var(--space-6);
+  font-size: var(--fs-hero);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-lead {
+  max-width: 58ch;
+  color: var(--text-muted);
+  font-size: clamp(1.05rem, 1rem + 0.5vw, 1.3rem);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+/* ---- Sprint 2: network canvas + terminal line ---- */
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* the edge fade is drawn by the canvas itself */
+}
+
+.hero-terminal {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--surface) 75%, transparent);
+  font-family: var(--font-mono);
+  font-size: clamp(0.9rem, 0.85rem + 0.3vw, 1.05rem);
+}
+
+.hero-terminal .prompt {
+  color: var(--accent-2);
+}
+
+.caret {
+  width: 0.6ch;
+  height: 1.2em;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caret {
+    animation: none;
+  }
+}

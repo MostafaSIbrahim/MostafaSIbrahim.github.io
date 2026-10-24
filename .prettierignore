@@ -1,0 +1,8 @@
+dist
+public
+node_modules
+package-lock.json
+lhci-report
+.lighthouseci
+# Written by the admin page with JSON.stringify; keep its formatting as is
+src/data/projects.json

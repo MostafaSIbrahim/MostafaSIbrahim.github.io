@@ -1,0 +1,120 @@
+[
+  {
+    "start": 1999,
+    "period": "1999 · 2009",
+    "chip": "Education",
+    "role": "Computer Engineering → Management of Technology",
+    "org": "AAST · Nile University",
+    "highlights": [
+      "BSc Computer Engineering, Arab Academy for Science & Technology (1999)",
+      "MSc Management of Technology, Nile University (2009)",
+      "Certified: PMP, ITIL Foundation, SANS Security Foundation, AWS CI/CD"
+    ]
+  },
+  {
+    "start": 1999,
+    "period": "1999 – 2004",
+    "role": "System Engineer & Developer",
+    "org": "Americana Group (Food & Beverage)",
+    "segment": "development",
+    "highlights": [
+      "System engineering and administration",
+      "C/C++ development",
+      "Oracle development and Oracle database administration"
+    ]
+  },
+  {
+    "start": 2005,
+    "period": "2005 – 2008",
+    "role": "System Administrator, Analyst & Datacenter Manager",
+    "org": "Ministry of Communications and IT (MCIT)",
+    "segment": "datacenters",
+    "highlights": ["System administration", "System analysis and design", "Datacenter management"]
+  },
+  {
+    "start": 2008,
+    "period": "2008 – 2014",
+    "role": "Department Manager, PMO & Solution Architect",
+    "org": "Ministry of Communications and IT (MCIT)",
+    "segment": "architecture",
+    "highlights": [
+      "Delivered 21+ large-scale government digital projects",
+      "E-governance platforms and justice-sector automation",
+      "Solution architecture and portfolio management (PMO)"
+    ]
+  },
+  {
+    "start": 2015,
+    "period": "Jan 2015 – Dec 2015",
+    "role": "Deputy CIO",
+    "org": "Egypt National Post (NPA)",
+    "segment": "datacenters",
+    "highlights": [
+      "Oversaw the SAP ERP implementation",
+      "Led datacenter consolidation",
+      "Enabled real-time data analytics across operations"
+    ]
+  },
+  {
+    "start": 2016,
+    "period": "Jan 2016 – Dec 2017",
+    "role": "Group Infrastructure Director",
+    "org": "Integrated Diagnostic Holdings (IDH)",
+    "segment": "infrastructure",
+    "highlights": [
+      "Modernized group infrastructure for telehealth and patient data analytics",
+      "Implemented AI-powered diagnostic tools",
+      "Centralized data systems for predictive analytics"
+    ]
+  },
+  {
+    "start": 2018,
+    "period": "Jun 2018 – Jun 2020",
+    "role": "CEO & Co-Founder",
+    "org": "Wave-Line, mobile towers service provider",
+    "segment": "leadership",
+    "highlights": [
+      "Built a digital-first strategy on IoT and cloud",
+      "Optimized service delivery and customer interactions",
+      "Forged partnerships with technology providers"
+    ]
+  },
+  {
+    "start": 2020,
+    "period": "Dec 2020 – Present",
+    "role": "CDO / CIO",
+    "org": "Egypt National Post (NPA)",
+    "segment": "leadership",
+    "highlights": [
+      "Digital transformation across 4,400+ branches",
+      "Core banking modernization on Temenos T24",
+      "Cloud migration (AWS/Azure): 60% more reliable",
+      "Mobile & online banking: +35% digital adoption"
+    ]
+  },
+  {
+    "start": 2020,
+    "period": "Key achievement · NPA",
+    "chip": "Tier IV",
+    "role": "Tier IV & Tier III certified datacenters",
+    "org": "Egypt National Post (NPA)",
+    "segment": "datacenters",
+    "highlights": [
+      "Designed and certified the primary (Tier IV) and DR (Tier III) datacenters",
+      "99.995% uptime for mission-critical digital services",
+      "Cybersecurity and compliance: 50% fewer security incidents"
+    ]
+  },
+  {
+    "start": 2023,
+    "period": "2023 – Ongoing",
+    "role": "Full-stack developer, back to code",
+    "org": "Self-directed · SafyaClinic · Student Management System",
+    "segment": "development",
+    "highlights": [
+      "Back to hands-on development: AWS CI/CD certified, then Python, Django, JavaScript and modern web techniques",
+      "Databases: MySQL, Microsoft SQL Server, PostgreSQL",
+      "Built in 2026: SafyaClinic, a Clean Architecture .NET Core solution, and a Python web app for student records"
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+.container {
+  width: min(100% - 2 * var(--gutter), var(--content-max));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(var(--space-10), 10vw, 8rem);
+  border-top: 1px solid var(--line);
+}
+
+.section h2 {
+  font-size: var(--fs-h2);
+}
+
+.section-label {
+  margin-bottom: var(--space-3);
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.section-lead {
+  max-width: 62ch;
+  margin-top: var(--space-4);
+  color: var(--text-muted);
+}
+
+/* Reserve space for sections whose content loads on approach (no layout jumps) */
+[data-timeline] {
+  min-height: 620px;
+}
+
+[data-skills] {
+  min-height: 640px;
+}
+
+[data-gallery] {
+  min-height: 620px;
+}

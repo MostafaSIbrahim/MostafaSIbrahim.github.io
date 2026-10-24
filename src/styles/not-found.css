@@ -1,0 +1,20 @@
+.not-found {
+  display: grid;
+  align-content: center;
+  min-height: 100svh;
+  padding-block: var(--space-12);
+}
+
+.not-found h1 {
+  margin-top: var(--space-3);
+  font-size: var(--fs-h2);
+}
+
+.not-found-code {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  color: var(--accent-2);
+  font-family: var(--font-mono);
+}
