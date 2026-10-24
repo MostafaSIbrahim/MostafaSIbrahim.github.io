@@ -87,15 +87,25 @@
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
-  opacity: calc(1 - var(--dist, 0) * 0.3);
-  filter: saturate(calc(1 - var(--dist, 0) * 0.4));
   transform: rotateY(var(--angle)) translateZ(var(--radius));
   backface-visibility: hidden;
   cursor: pointer;
   transition:
-    opacity var(--dur-carousel) ease,
     border-color var(--dur-carousel) ease,
     box-shadow var(--dur-carousel) ease;
+}
+
+/* Side cards are inactive slides (aria-hidden): a shade over them sets them back
+   without fading the text colors of the card that's being read. */
+.milestone::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: var(--bg);
+  opacity: calc(var(--dist, 0) * 0.28);
+  pointer-events: none;
+  transition: opacity var(--dur-carousel) ease;
 }
 
 .milestone.is-front {

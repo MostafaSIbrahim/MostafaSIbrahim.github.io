@@ -25,3 +25,16 @@
   margin-top: var(--space-4);
   color: var(--text-muted);
 }
+
+/* Reserve space for sections whose content loads on approach (no layout jumps) */
+[data-timeline] {
+  min-height: 620px;
+}
+
+[data-skills] {
+  min-height: 640px;
+}
+
+[data-gallery] {
+  min-height: 620px;
+}

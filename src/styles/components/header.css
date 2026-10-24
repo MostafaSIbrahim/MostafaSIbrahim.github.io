@@ -4,13 +4,15 @@
   z-index: 100;
   height: var(--header-h);
   border-bottom: 1px solid transparent;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
   transition: border-color var(--dur-ui) var(--ease-out);
 }
 
+/* Blur only once content scrolls underneath; at the top it would re-blur the hero canvas every frame */
 .site-header.is-scrolled {
   border-bottom-color: var(--line);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(12px);
 }
 
 .header-inner {

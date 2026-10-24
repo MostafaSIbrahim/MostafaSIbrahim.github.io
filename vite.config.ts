@@ -6,8 +6,8 @@ export default defineConfig({
     target: 'es2022',
     sourcemap: true,
     rollupOptions: {
-      // Two pages: the public site and the content admin at /admin/
-      input: { main: 'index.html', admin: 'admin/index.html' },
+      // The public site, the content admin at /admin/, and the 404 page
+      input: { main: 'index.html', admin: 'admin/index.html', notFound: '404.html' },
     },
   },
 });

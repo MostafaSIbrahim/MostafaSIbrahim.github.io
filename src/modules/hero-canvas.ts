@@ -71,42 +71,77 @@ export function initHeroCanvas(canvas: HTMLCanvasElement): void {
     }
   }
 
+  /**
+   * Edge fade done in maths instead of a CSS mask (a mask is re-rasterized every frame).
+   * 1 near the focus point (70% across, 45% down), fading to 0 towards the edges.
+   */
+  const fade = (x: number, y: number): number => {
+    const dx = (x - width * 0.7) / (width * 0.75);
+    const dy = (y - height * 0.45) / (height * 0.7);
+    const r = Math.sqrt(dx * dx + dy * dy);
+    return r <= 0.35 ? 1 : r >= 0.85 ? 0 : 1 - (r - 0.35) / 0.5;
+  };
+
+  const BUCKETS = 4; // lines are grouped by opacity: 4 strokes per frame instead of hundreds
+  const paths: Path2D[] = [];
+
   function draw(): void {
     g.clearRect(0, 0, width, height);
     g.lineWidth = 1;
+    for (let k = 0; k < BUCKETS; k++) paths[k] = new Path2D();
 
     points.forEach((a, i) => {
       for (let j = i + 1; j < points.length; j++) {
         const b = points[j];
         if (!b) continue;
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d > LINK_DISTANCE) continue;
-        g.globalAlpha = (1 - d / LINK_DISTANCE) * 0.35;
-        g.strokeStyle = colors.line;
-        g.beginPath();
-        g.moveTo(a.x, a.y);
-        g.lineTo(b.x, b.y);
-        g.stroke();
+        const dx = a.x - b.x;
+        const dy = a.y - b.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 > LINK_DISTANCE * LINK_DISTANCE) continue;
+        const strength =
+          (1 - Math.sqrt(d2) / LINK_DISTANCE) * fade((a.x + b.x) / 2, (a.y + b.y) / 2);
+        const bucket = Math.min(BUCKETS - 1, Math.floor(strength * BUCKETS));
+        if (strength <= 0.05) continue;
+        paths[bucket]?.moveTo(a.x, a.y);
+        paths[bucket]?.lineTo(b.x, b.y);
       }
     });
+    g.strokeStyle = colors.line;
+    paths.forEach((path, k) => {
+      g.globalAlpha = ((k + 1) / BUCKETS) * 0.35;
+      g.stroke(path);
+    });
 
+    // Cursor links + nodes: one path per colour/opacity group.
+    const hot = new Path2D();
+    const hotNodes = new Path2D();
+    const nodes: Path2D[] = [new Path2D(), new Path2D(), new Path2D()];
     for (const p of points) {
       const near = pointer.active ? Math.hypot(p.x - pointer.x, p.y - pointer.y) : Infinity;
       if (near < POINTER_RADIUS) {
-        g.globalAlpha = (1 - near / POINTER_RADIUS) * 0.8;
-        g.strokeStyle = colors.accent;
-        g.beginPath();
-        g.moveTo(p.x, p.y);
-        g.lineTo(pointer.x, pointer.y);
-        g.stroke();
+        hot.moveTo(p.x, p.y);
+        hot.lineTo(pointer.x, pointer.y);
+        hotNodes.moveTo(p.x + p.r, p.y);
+        hotNodes.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        continue;
       }
-      g.globalAlpha = near < POINTER_RADIUS ? 1 : 0.7;
-      g.fillStyle = near < POINTER_RADIUS ? colors.accent : colors.node;
-      g.beginPath();
-      g.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      g.fill();
+      const level = Math.round(fade(p.x, p.y) * 2);
+      if (level === 0) continue;
+      const path = nodes[level] ?? nodes[2];
+      path?.moveTo(p.x + p.r, p.y);
+      path?.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     }
+    g.fillStyle = colors.node;
+    nodes.forEach((path, level) => {
+      g.globalAlpha = level * 0.35;
+      if (level) g.fill(path);
+    });
+    g.strokeStyle = colors.accent;
+    g.fillStyle = colors.accent;
+    g.globalAlpha = 0.6;
+    g.stroke(hot);
     g.globalAlpha = 1;
+    g.fill(hotNodes);
   }
 
   function tick(): void {

@@ -10,7 +10,7 @@ import { createProjectDialog } from '../modules/project-dialog';
 import { emptyProject, renderEditor } from './editor';
 import { GitHub, GitHubError, blobToBase64, textToBase64, type FileChange } from './github';
 
-const DEFAULTS = { owner: 'MostafaSIbrahim', repo: 'MostafaSIbrahim.github.io', branch: 'revamp' };
+const DEFAULTS = { owner: 'MostafaSIbrahim', repo: 'MostafaSIbrahim.github.io', branch: 'main' };
 const DATA_PATH = 'src/data/projects.json';
 const SETTINGS_KEY = 'admin-settings'; // owner/repo/branch only: never the token
 const TOKEN_KEY = 'admin-token'; // sessionStorage, only if the user ticks "remember"

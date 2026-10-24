@@ -4,12 +4,73 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0b0f14" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Mostafa Safwat Ibrahim — Full-Stack Developer & Systems Architect</title>
     <meta
       name="description"
       content="25+ years across datacenters, infrastructure and system architecture, now building full-stack products. Portfolio with live demos."
     />
+    <link rel="canonical" href="https://mostafasibrahim.github.io/" />
+
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Link previews (LinkedIn, WhatsApp, X, Slack…) -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Mostafa Safwat Ibrahim" />
+    <meta
+      property="og:title"
+      content="Mostafa Safwat Ibrahim — Full-Stack Developer & Systems Architect"
+    />
+    <meta
+      property="og:description"
+      content="25+ years from datacenters to the CIO office, now building full-stack products. Live demos and case studies."
+    />
+    <meta property="og:url" content="https://mostafasibrahim.github.io/" />
+    <meta property="og:image" content="https://mostafasibrahim.github.io/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Mostafa Safwat Ibrahim — portfolio hero with a network of connected nodes"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Structured data for search engines -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mostafa Safwat Ibrahim",
+        "url": "https://mostafasibrahim.github.io/",
+        "image": "https://mostafasibrahim.github.io/og-image.png",
+        "jobTitle": "Full-Stack Developer & Systems Architect",
+        "email": "mailto:mostafa.safwat@gmail.com",
+        "sameAs": [
+          "https://www.linkedin.com/in/mostafa-safwat-6a971110/",
+          "https://github.com/MostafaSIbrahim"
+        ],
+        "alumniOf": [
+          { "@type": "CollegeOrUniversity", "name": "Nile University" },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Arab Academy for Science, Technology & Maritime Transport"
+          }
+        ],
+        "knowsAbout": [
+          "Full-stack development",
+          "System architecture",
+          "Datacenters",
+          "IT infrastructure",
+          "Digital transformation",
+          "C#",
+          "ASP.NET Core",
+          "Python",
+          "TypeScript"
+        ]
+      }
+    </script>
     <script>
       // Apply the saved theme before first paint to avoid a flash.
       try {
@@ -26,10 +87,12 @@
         <a class="brand" href="#hero">
           <img
             class="brand-logo"
-            src="/assets/brand/msi-metallic.png"
+            src="/assets/brand/msi-logo-144.webp"
+            srcset="/assets/brand/msi-logo-144.webp 1x, /assets/brand/msi-logo-288.webp 2x"
             alt=""
-            width="1774"
-            height="887"
+            width="72"
+            height="36"
+            fetchpriority="high"
           />
           <span class="brand-text">
             <span class="brand-name">Mostafa S. Ibrahim</span>
@@ -197,7 +260,7 @@
                 <span class="code-file">src/modules/typewriter.ts</span>
                 <a
                   class="code-source"
-                  href="https://github.com/MostafaSIbrahim/MostafaSIbrahim.github.io/blob/revamp/src/modules/typewriter.ts"
+                  href="https://github.com/MostafaSIbrahim/MostafaSIbrahim.github.io/blob/main/src/modules/typewriter.ts"
                   target="_blank"
                   rel="noopener noreferrer"
                   >source <span class="visually-hidden">(opens in a new tab)</span
@@ -234,7 +297,134 @@
         <div class="container">
           <p class="section-label">// 06 — this site</p>
           <h2 id="built-title">How this site is built</h2>
-          <p class="section-lead">Architecture, performance scores and source. Sprint 5.</p>
+          <p class="section-lead">
+            This page is its own case study: no UI framework, typed content, and a pipeline that
+            checks quality before anything goes live.
+          </p>
+
+          <div class="built-flow">
+            <h3 class="built-label">From content to live site</h3>
+            <ol class="pipeline">
+              <li>
+                <span class="step-kicker">01 · content</span>
+                <strong>Typed JSON</strong>
+                <span
+                  >projects, career, skills and IT domains, checked against TypeScript types</span
+                >
+              </li>
+              <li>
+                <span class="step-kicker">02 · code</span>
+                <strong>TypeScript modules</strong>
+                <span>one small module per section; Canvas, CSS 3D and GSAP for motion</span>
+              </li>
+              <li>
+                <span class="step-kicker">03 · build</span>
+                <strong>Vite</strong>
+                <span>code split per section, hashed files, self-hosted fonts</span>
+              </li>
+              <li>
+                <span class="step-kicker">04 · gate</span>
+                <strong>GitHub Actions</strong>
+                <span>types, lint, formatting and a Lighthouse budget must pass</span>
+              </li>
+              <li>
+                <span class="step-kicker">05 · live</span>
+                <strong>GitHub Pages</strong>
+                <span>deployed only when every check is green</span>
+              </li>
+            </ol>
+            <p class="pipeline-side">
+              <span class="step-kicker">content updates</span>
+              A private <code>/admin/</code> page edits projects in the browser, converts images to
+              WebP, and publishes through the GitHub API as one atomic commit, which runs the same
+              pipeline.
+            </p>
+          </div>
+
+          <div class="built-grid">
+            <div class="built-facts-wrap">
+              <dl class="built-facts">
+                <div>
+                  <dt>Frameworks</dt>
+                  <dd>0</dd>
+                </div>
+                <div>
+                  <dt>JavaScript on first load</dt>
+                  <dd>9 KB</dd>
+                </div>
+                <div>
+                  <dt>Page weight, first screen</dt>
+                  <dd>150 KB</dd>
+                </div>
+                <div>
+                  <dt>Animations you can pause</dt>
+                  <dd>all</dd>
+                </div>
+                <div class="built-score">
+                  <dt>Lighthouse, mobile</dt>
+                  <dd>
+                    <span><b>99</b> performance</span>
+                    <span><b>100</b> accessibility</span>
+                    <span><b>100</b> best practices</span>
+                    <span><b>100</b> SEO</span>
+                  </dd>
+                </div>
+              </dl>
+              <p class="built-note">
+                Measured with Lighthouse 12 on 24 Oct 2026. Every deploy re-runs it, and the
+                pipeline refuses to publish below 90 / 95 / 95 / 95.
+              </p>
+            </div>
+            <ul class="built-decisions">
+              <li>
+                <h3>Content is data</h3>
+                <p>
+                  Every project, role and skill lives in JSON with a TypeScript contract, so adding
+                  work never means touching layout code.
+                </p>
+              </li>
+              <li>
+                <h3>Load what's needed</h3>
+                <p>
+                  The first screen ships a few kilobytes; each section below loads its own code just
+                  before it scrolls into view.
+                </p>
+              </li>
+              <li>
+                <h3>Motion with manners</h3>
+                <p>
+                  Every effect pauses off screen and respects reduced-motion settings; the carousel
+                  has a pause button.
+                </p>
+              </li>
+              <li>
+                <h3>Accessible by default</h3>
+                <p>
+                  Native dialogs, WAI-ARIA tabs and carousel patterns, visible focus, and 4.5:1
+                  contrast in both themes.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-actions">
+            <a
+              class="btn btn-primary"
+              href="https://github.com/MostafaSIbrahim/MostafaSIbrahim.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Read the source <span class="visually-hidden">(opens in a new tab)</span
+              ><span aria-hidden="true">↗</span></a
+            >
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/MostafaSIbrahim/MostafaSIbrahim.github.io/actions"
+              target="_blank"
+              rel="noopener noreferrer"
+              >See the pipeline runs <span class="visually-hidden">(opens in a new tab)</span
+              ><span aria-hidden="true">↗</span></a
+            >
+          </div>
         </div>
       </section>
 

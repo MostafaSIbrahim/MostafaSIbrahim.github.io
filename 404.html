@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f14" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <title>Page not found — Mostafa Safwat Ibrahim</title>
+    <script>
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t;
+      } catch {}
+    </script>
+  </head>
+  <body>
+    <main class="not-found container">
+      <p class="section-label">// error 404</p>
+      <h1>This page isn't in the stack.</h1>
+      <p class="section-lead">The link may be old or mistyped. Everything lives on one page now.</p>
+      <p class="not-found-code" aria-hidden="true">$ cd ~ <span class="caret"></span></p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/">Go to the portfolio</a>
+        <a class="btn btn-ghost" href="/#work">See the work</a>
+      </div>
+    </main>
+    <script type="module" src="/src/not-found.ts"></script>
+  </body>
+</html>

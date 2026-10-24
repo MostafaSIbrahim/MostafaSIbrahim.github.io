@@ -39,14 +39,15 @@ export function initGallery(host: HTMLElement): void {
 
   // ---- Filters ----
   const apply = (tag: string, animate: boolean): void => {
-    const state = Flip.getState(cards);
+    const motion = animate && !prefersReducedMotion();
+    const state = motion ? Flip.getState(cards) : null; // getState forces a layout
     filters.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === tag)));
     cards.forEach((card) => {
       card.hidden = tag !== 'All' && !(card.dataset.tags ?? '').split('|').includes(tag);
     });
     const shown = cards.filter((c) => !c.hidden).length;
     status.textContent = `Showing ${shown} of ${cards.length} projects`;
-    if (!animate || prefersReducedMotion()) return;
+    if (!state) return;
     Flip.from(state, {
       duration: 0.5,
       ease: 'expo.out',
