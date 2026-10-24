@@ -70,7 +70,8 @@ export function initSkills(host: HTMLElement): void {
   );
 
   const apply = (filter: Filter, animate: boolean): void => {
-    const state = Flip.getState(cards);
+    const motion = animate && !prefersReducedMotion();
+    const state = motion ? Flip.getState(cards) : null; // getState forces a layout
 
     buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filter === filter)));
     cards.forEach((card) => (card.hidden = filter !== 'all' && card.dataset.group !== filter));
@@ -78,7 +79,7 @@ export function initSkills(host: HTMLElement): void {
     const shown = cards.filter((c) => !c.hidden).length;
     status.textContent = `Showing ${shown} of ${cards.length} technologies`;
 
-    if (!animate || prefersReducedMotion()) return;
+    if (!state) return;
     Flip.from(state, {
       duration: 0.5,
       ease: 'expo.out',

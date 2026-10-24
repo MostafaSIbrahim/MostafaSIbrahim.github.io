@@ -32,7 +32,7 @@ export function initTimeline(host: HTMLElement): void {
   // ---- Markup ----
   const cards = items.map((m, i) =>
     h(
-      'li',
+      'div',
       {
         class: 'milestone',
         role: 'group',
@@ -54,7 +54,7 @@ export function initTimeline(host: HTMLElement): void {
   );
   cards.forEach((card, i) => card.style.setProperty('--angle', `${i * step}deg`));
 
-  const ring = h('ol', { class: 'carousel-ring' }, ...cards);
+  const ring = h('div', { class: 'carousel-ring' }, ...cards);
   const stage = h('div', { class: 'carousel-stage' }, ring);
 
   const arrow = (d: string): SVGSVGElement =>
@@ -72,13 +72,15 @@ export function initTimeline(host: HTMLElement): void {
   const toggle = h('button', { class: 'carousel-toggle', type: 'button' });
   const status = h('p', { class: 'carousel-status', 'aria-live': 'off', 'aria-atomic': 'true' });
 
-  const years = items.map((m) =>
-    h(
+  // The accessible name starts with the visible text (WCAG 2.5.3 "label in name").
+  const years = items.map((m) => {
+    const label = m.chip ?? String(m.start);
+    return h(
       'button',
-      { class: 'carousel-year', type: 'button', 'aria-label': `${m.period}: ${m.role}` },
-      m.chip ?? String(m.start),
-    ),
-  );
+      { class: 'carousel-year', type: 'button', 'aria-label': `${label}: ${m.role}, ${m.period}` },
+      label,
+    );
+  });
 
   const carousel = h(
     'div',
