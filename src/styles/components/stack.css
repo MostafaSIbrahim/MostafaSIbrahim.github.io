@@ -113,11 +113,26 @@
 }
 
 /* ---- The detail panel ---- */
+/* All panels share one grid cell, so the area keeps the tallest panel's height:
+   switching layers (by hand or by the tour) never moves the page below. */
+.stack-panels {
+  display: grid;
+}
+
 .stack-panel {
+  grid-area: 1 / 1;
   padding: clamp(var(--space-6), 4vw, var(--space-8));
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background: var(--surface);
+}
+
+.stack-panel[hidden] {
+  display: block;
+  visibility: hidden; /* keeps its space; still out of the accessibility tree and tab order */
+}
+
+.stack-panel:not([hidden]) {
   animation: panel-in var(--dur-ui) var(--ease-out);
 }
 
@@ -203,4 +218,71 @@
     font-size: 0.9rem;
     white-space: nowrap;
   }
+}
+
+/* ---- Tour: a pause button with a progress bar for the current step ---- */
+.stack-tour {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.stack-tour-toggle {
+  min-height: 36px;
+  padding-inline: var(--space-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.stack-tour-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stack-tour-toggle[hidden] {
+  display: none;
+}
+
+.stack-tour-progress {
+  width: 96px;
+  height: 2px;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--line);
+  opacity: 0;
+  transition: opacity var(--dur-ui) ease;
+}
+
+.stack-tour-progress::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.is-touring .stack-tour-progress {
+  opacity: 1;
+}
+
+.is-touring .stack-tour-progress.is-running::after {
+  animation: tour-step 4500ms linear forwards; /* matches TOUR_MS in stack.ts */
+}
+
+@keyframes tour-step {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* While touring, every layer stays readable: the tour moves the light, it doesn't dim the rest */
+.is-touring .layer {
+  color: var(--text);
 }
