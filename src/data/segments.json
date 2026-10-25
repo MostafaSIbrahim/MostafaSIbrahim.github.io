@@ -25,17 +25,21 @@
       "System engineering and administration since 1999",
       "Group infrastructure at Integrated Diagnostic Holdings (IDH), supporting telehealth",
       "Full-scale infrastructure overhaul at NPA, replacing legacy systems",
-      "Migration of legacy systems to AWS and Azure"
+      "Re-architected the technology landscape with no-single-point-of-failure (NSPOF) design",
+      "Migrated legacy database systems to Oracle Exadata Cloud@Customer (ExaCC)"
     ],
     "platforms": [
       "Oracle Database",
+      "Oracle ExaCC",
       "AWS",
       "Microsoft Azure",
       "Hybrid cloud",
       "Containers",
       "SAP ERP"
     ],
-    "outcomes": ["60% improved reliability after the cloud migration"]
+    "outcomes": [
+      "85% higher reliability after the NSPOF re-architecture, technology revamp and move to Oracle ExaCC"
+    ]
   },
   {
     "id": "architecture",
