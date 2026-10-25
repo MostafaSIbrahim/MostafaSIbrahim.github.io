@@ -25,6 +25,7 @@ afterPaint(() => {
   void import('./modules/hero-canvas').then(({ initHeroCanvas }) =>
     initHeroCanvas(qs<HTMLCanvasElement>('.hero-canvas')),
   );
+  void import('./modules/photo-motion').then(({ initPhotoMotion }) => initPhotoMotion());
 });
 
 // ---- Below the fold: each section loads its code (and GSAP) on approach ----
