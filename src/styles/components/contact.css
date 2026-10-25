@@ -1,0 +1,39 @@
+/* ---- Contact: copy on the left, the Giza portrait on the right ---- */
+.contact-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(var(--space-8), 6vw, var(--space-12));
+}
+
+.contact-photo {
+  width: clamp(220px, 24vw, 320px);
+  margin: 0;
+}
+
+.contact-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 24px 60px -28px color-mix(in srgb, var(--accent) 50%, transparent);
+}
+
+.contact-photo figcaption {
+  margin-top: var(--space-3);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .contact-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .contact-photo {
+    width: min(100%, 280px);
+  }
+}

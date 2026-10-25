@@ -80,3 +80,49 @@
     animation: none;
   }
 }
+
+/* ---- Profile photo: beside the copy on wide screens, above it on phones ---- */
+.hero-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(var(--space-8), 5vw, var(--space-12));
+}
+
+.hero-photo {
+  position: relative;
+  width: clamp(240px, 26vw, 360px);
+  margin: 0;
+  aspect-ratio: 1;
+}
+
+/* A soft ring in the accent colors, so the photo belongs to the dark theme */
+.hero-photo::before {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  z-index: -1;
+  border-radius: 50%;
+  background: conic-gradient(from 210deg, var(--accent), var(--accent-2), var(--accent));
+  opacity: 0.85;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 4px solid var(--bg);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 860px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .hero-photo {
+    order: -1; /* photo first, then name: the reader sees who before what */
+    width: clamp(120px, 34vw, 180px);
+  }
+}
