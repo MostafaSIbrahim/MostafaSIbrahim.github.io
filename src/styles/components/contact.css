@@ -6,26 +6,95 @@
   gap: clamp(var(--space-8), 6vw, var(--space-12));
 }
 
+/* Unlike the round hero photo: a tilted card with an offset amber frame,
+   shown in the site's cyan duotone until it washes into full colour. */
 .contact-photo {
+  position: relative;
   width: clamp(220px, 24vw, 320px);
   margin: 0;
 }
 
-.contact-photo img {
-  display: block;
-  width: 100%;
-  height: auto;
+/* Offset frame behind the card */
+.contact-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  aspect-ratio: 4 / 5;
+  border: 2px solid var(--accent-2);
+  border-radius: var(--radius-lg);
+  transform: translate(14px, 14px) rotate(3deg);
+  transition: transform 600ms var(--ease-out);
+}
+
+.contact-frame {
+  position: relative;
+  overflow: hidden;
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   box-shadow: 0 24px 60px -28px color-mix(in srgb, var(--accent) 50%, transparent);
+  transform: rotate(-2deg);
+  transition: transform 600ms var(--ease-out);
+}
+
+.contact-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: scale(1.04);
+  transition: transform 1600ms var(--ease-out);
+}
+
+/* Duotone layer: keeps the photo's light and shade, swaps its colours for the accent */
+.contact-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 40%, #071420)
+  );
+  mix-blend-mode: color;
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 2200ms cubic-bezier(0.65, 0, 0.35, 1) 500ms;
+  pointer-events: none;
+}
+
+/* Revealed (photo-motion.ts adds it on scroll; without JS it's on from the start) */
+.contact-photo:not([data-reveal='pending']) .contact-frame::after {
+  clip-path: inset(100% 0 0 0); /* the duotone slides down: colour arrives face first */
+}
+
+/* Hover or keyboard focus nearby: the card straightens and the photo eases in */
+.contact-photo:hover .contact-frame,
+.contact-inner:focus-within .contact-frame {
+  transform: rotate(0deg);
+}
+
+.contact-photo:hover::before,
+.contact-inner:focus-within .contact-photo::before {
+  transform: translate(8px, 8px) rotate(0deg);
+}
+
+.contact-photo:hover img {
+  transform: scale(1.1);
 }
 
 .contact-photo figcaption {
-  margin-top: var(--space-3);
+  margin-top: var(--space-6);
   color: var(--text-muted);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-photo::before,
+  .contact-frame,
+  .contact-frame img,
+  .contact-frame::after {
+    transition: none;
+  }
 }
 
 @media (max-width: 760px) {
@@ -34,6 +103,6 @@
   }
 
   .contact-photo {
-    width: min(100%, 280px);
+    width: min(100% - 20px, 280px);
   }
 }
